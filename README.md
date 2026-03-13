@@ -2,9 +2,10 @@
 
 | Student's name | SCIPER |
 | -------------- | ------ |
-| | |
-| | |
-| | |
+|Rania Boubrik | 361496|
+|Maryam Harakat | 359826|
+|Rosa Mayila | 275047|
+|Valentin Planes | 409205|
 
 [Milestone 1](#milestone-1) • [Milestone 2](#milestone-2) • [Milestone 3](#milestone-3)
 
