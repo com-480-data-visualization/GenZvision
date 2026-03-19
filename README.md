@@ -51,7 +51,12 @@ There is already some work related to this dataset on Kaggle. It is especially i
 
 What we want to do differently is focus more on the story behind the data by presenting it as a timeline of emergence, spread, popularity, and decline. In other words, we want to use the dataset to explain a dynamic process. That gives the project a more original angle, because it turns the analysis into a narrative about how online language changes inside different digital spaces. We are especially interested in showing movement between origin platform and usage platform, because that feels like one of the most meaningful parts of the dataset.
 
-For inspiration, we are thinking less about copying one exact example and more about the general style of data stories that are easy to explore and understand. Since our topic is internet slang, we think the final project should feel accessible, visually clear, and maybe even a little playful. We do not want something overloaded with technical details that makes people lose interest immediately.So the originality of our project comes mainly from the way we want to frame the data, which is not just as descriptive statistics, but as a visual story about how language trends move through social media culture.
+For inspiration, we are thinking less about copying one exact example and more about the general style of data stories that are easy to explore and understand. Since our topic is internet slang, we think the final project should feel accessible, visually clear, and maybe even a little playful. We do not want something overloaded with technical details that makes people lose interest immediately.So the originality of our project comes mainly from the way we want to frame the data, which is not just as descriptive statistics, but as a visual story about how language trends move through social media culture. 
+
+Here are a couple visualizations that we found interesting and that we think might correspond to our objective:
+<img width="1207" height="798" alt="Capture d’écran 2026-03-19 à 16 40 49" src="https://github.com/user-attachments/assets/56130c8c-c153-4451-9689-83acdfd16813" />
+
+<img width="797" height="797" alt="Capture d’écran 2026-03-19 à 16 42 24" src="https://github.com/user-attachments/assets/eb0b7284-07a4-4ba1-ae70-b6c385a5263c" />
 
 
 ## Milestone 2 (17th April, 5pm)
