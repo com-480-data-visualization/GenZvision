@@ -19,7 +19,7 @@ Please, fill the following sections about your project.
 *(max. 2000 characters per section)*
 
 ### Dataset
-For our project, we chose the **GenZ Slang Evolution Tracker (2020–2025)** dataset from Kaggle (https://www.kaggle.com/datasets/likithagedipudi/genz-slang-evolution-tracker-2020-2025). This dataset follows “GenZ” slang terms across social media and includes information that can help us understand not only which words are popular, but also how they move through online culture over time.
+For our project, we chose the **GenZ Slang Evolution Tracker (2020–2025)** dataset from Kaggle (https://www.kaggle.com/datasets/likithagedipudi/genz-slang-evolution-tracker-2020-2025). This dataset follows "GenZ" slang terms across social media and includes information that can help us understand not only which words are popular, but also how they move through online culture over time.
 
 The dataset is based on a topic that people immediately understand. Instead of working with something too technical or abstract. Therefore, it  worked perfectly for us as we wanted a dataset that could lead to a visual story people would actually want to look at, instead of something too technical or abstract. 
 
@@ -54,14 +54,129 @@ What we want to do differently is focus more on the story behind the data by pre
 For inspiration, we are thinking less about copying one exact example and more about the general style of data stories that are easy to explore and understand. Since our topic is internet slang, we think the final project should feel accessible, visually clear, and maybe even a little playful. We do not want something overloaded with technical details that makes people lose interest immediately.So the originality of our project comes mainly from the way we want to frame the data, which is not just as descriptive statistics, but as a visual story about how language trends move through social media culture. 
 
 Here are a couple visualizations that we found interesting and that we think might correspond to our objective:
-<img width="1207" height="798" alt="Capture d’écran 2026-03-19 à 16 40 49" src="https://github.com/user-attachments/assets/56130c8c-c153-4451-9689-83acdfd16813" />
+<img width="1207" height="798" alt="Capture d'écran 2026-03-19 à 16 40 49" src="https://github.com/user-attachments/assets/56130c8c-c153-4451-9689-83acdfd16813" />
 
-<img width="797" height="797" alt="Capture d’écran 2026-03-19 à 16 42 24" src="https://github.com/user-attachments/assets/eb0b7284-07a4-4ba1-ae70-b6c385a5263c" />
+<img width="797" height="797" alt="Capture d'écran 2026-03-19 à 16 42 24" src="https://github.com/user-attachments/assets/eb0b7284-07a4-4ba1-ae70-b6c385a5263c" />
 
 
 ## Milestone 2 (17th April, 5pm)
 
 **10% of the final grade**
+
+### Project Goal & Narrative Arc
+
+Our project, **GenZvision**, is an interactive scrollytelling visualization that answers the question: *How does Gen Z slang evolve and spread across social media platforms between 2020 and 2025?*
+
+Rather than presenting slang as a static list of trendy words, we treat it as a **dynamic phenomenon with a lifecycle**: emergence, growth, peak, decline, and dormancy. The visualization guides the user through four narrative chapters, each powered by a distinct D3.js visualization:
+
+1. **The Rise** — A timeline heatmap reveals when each slang term enters the cultural lexicon and how its usage intensity fluctuates month by month across 2020–2025, using a YlOrRd sequential colormap.
+2. **The Spread** — A Sankey diagram maps the cross-platform diffusion of slang, showing how terms originate on one platform (predominantly TikTok) and migrate to others like Twitter, Reddit, Instagram, and Twitch.
+3. **Peak & Decline** — A dynamic bubble chart plots each term's lifecycle phase. Color encodes the current phase (growing, peak, declining, dormant) and bubble size encodes the monthly usage count, both animated over time so the user can watch terms rise and fall.
+4. **Explore** — An interactive dashboard section (Milestone 3) will allow users to filter by term, platform, age group, and region with coordinated, linked views.
+
+**Target audience:** Students, young adults, and anyone interested in internet culture — accessible and visually engaging, not overly technical.
+
+### Visualization Sketches
+
+Below are hand-drawn sketches of the visualizations we plan to build for the final product:
+
+**1. Timeline Heatmap — When Slang Rises and Falls**
+
+Each row is a slang term, each column is a month, and color intensity (YlOrRd) encodes usage intensity. The heatmap lets you spot at a glance when a term peaked and how long it stayed relevant.
+
+![Timeline Heatmap Sketch](data/sketches/sketch_timeline_heatmap.jpg)
+
+**2. Platform Flow — Where Slang Starts vs. Where It Spreads (Sankey Diagram)**
+
+Left nodes represent origin platforms, right nodes represent usage platforms. The width of each flow encodes the number of terms that traveled that path. This reveals cross-platform diffusion patterns — e.g., terms born on TikTok spreading to Twitter and Reddit.
+
+![Platform Flow Sketch](data/sketches/sketch_sankey.jpg)
+
+**3. Bubble Chart — Term Lifecycle and Popularity (Dynamic + Static Views)**
+
+The sketch shows two versions: a **dynamic view** where bubble color (lifecycle phase) and size (monthly usage count) animate over time using a timeline slider, and a **static view** showing the final state. On hover, a tooltip reveals the term's explanation, total usage, sentiment, phase, date, origin, and platform.
+
+![Bubble Chart Sketch](data/sketches/sketch_bubble_chart.jpg)
+
+**4. Bubble Race — Which Slang Term Leads?**
+
+Inspired by bar chart races, terms compete in lanes ranked by popularity. As the user drags a timeline slider (or presses play), terms overtake each other — "slay" dominates in 2022 but "sigma" surges to #1 by 2023. Each term has a colored trail showing momentum.
+
+![Bubble Race Sketch](data/sketches/sketch_bubble_race.jpg)
+
+**5. The Slang Cosmos — Sentiment × Intensity Constellation Map**
+
+A scatter plot where X = sentiment score (-1 to +1) and Y = intensity score (0 to 1). Terms in the same category are connected by lines to form "constellations." The chart uses a dark sky background with glowing stars. This dual encoding reveals that sentiment and intensity are independent dimensions (correlation ≈ 0.01): a term like "brat" can be mildly negative yet used with extreme intensity.
+
+![Constellation Sketch](data/sketches/sketch_constellation_sentiment.jpg)
+
+**6. Regional Slang Adoption Map (US Choropleth)**
+
+A US map where color intensity encodes how many slang terms are actively used in each state. The dataset covers 12 US states and 10 international regions (66% US, 34% international by occurrence). California and New York show the highest adoption.
+
+![Choropleth Sketch](data/sketches/sketch_choropleth.jpg)
+
+### Tools & Lectures
+
+| Visualization | Tools | Specific Lecture Content Used |
+|---|---|---|
+| **Scrollytelling layout** | HTML/CSS, Intersection Observer API | **L1 (Web Dev)**: DOM manipulation, CSS layout. **L12 (Storytelling)**: Narrative structure (Freytag's pyramid), linear flow for improved storytelling (Mendiratta 2014), "start with an interesting point", "limit interactivity to key elements". |
+| **Timeline heatmap** | D3.js v7 (scales, axes, color scales) | **L5.2 (Interactive D3)**: `d3.scaleLinear`/`d3.scaleSequential` for mapping data domain to visual range, `d3.axisLeft/Bottom` for labeled axes, margin convention for proper label placement. **L6.1 (Perception & Color)**: Sequential colormaps for proportional change in lightness with hue shift; avoiding perceptually non-uniform scales like Matlab jet. **L6.2 (Marks & Channels)**: Position as strongest channel for the time axis; luminance/saturation for intensity encoding; expressiveness principle ("visual encoding should only express information in the dataset"). |
+| **Platform Sankey** | D3.js + d3-sankey | **L8 (Maps)**: Sankey diagram as "multivariate representation of movement" with properties: spatial position, line width, color hue. **L5.1 (Interactions)**: Brushing ("selecting a subset of data items with an input device") and Linking ("showing how subset of data items behaves in other views") for cross-platform filtering. **L7.1 (Designing Viz)**: Nested model level 3 — choosing visual encoding/interaction idiom; task abstraction for "Compare: multiple targets" when comparing platform flows. |
+| **Bubble chart (dynamic)** | D3.js (force simulation, transitions, timer) | **L5.2 (Interactive D3)**: D3 transitions (`.transition().duration().ease()` pattern), easing functions, General Update Pattern with keys for stable animations. **L10 (Graphs)**: Force-directed layouts ("adapted from Physics, with repulsive magnets and edges as springs") for bubble positioning. **L6.2 (Marks & Channels)**: Size (area) channel for monthly usage; color hue for lifecycle phase — combining two independent visual channels. **L12 (Storytelling)**: Temporal animation as narrative device — "put numbers and facts in context". |
+| **Bubble race** | D3.js (transitions, timer, ranked layout) | **L5.2 (Interactive D3)**: Animated transitions with `d3.timer` for smooth interpolation between monthly rankings. **L12 (Storytelling)**: Temporal animation to create dramatic moments — "start with an interesting point" (slay's early dominance), build tension (overtakes), payoff (sigma's rise). **L6.2 (Marks & Channels)**: Position (lane rank) as primary channel; length (bar extent) as secondary; hue for term identity. |
+| **Constellation map** | D3.js (scatter, force, annotations) | **L10 (Graphs)**: Node-link diagram where terms are nodes and category membership defines edges (constellation lines). **L6.1 (Perception & Color)**: Categorical color palettes (max 6–8 hues) for constellation categories; glow effects using opacity layering. **L6.2 (Marks & Channels)**: Position encodes two independent quantitative variables (sentiment × intensity); size encodes a third (usage count) — following the expressiveness principle. |
+| **Interactive explore** | D3.js + Crossfilter | **L5.1 (Interactions)**: Shneiderman's Visual Information Seeking Mantra ("Overview first, zoom and filter, details on demand"), linked views ("action on one view affects the others"), small multiples. **L5.2 (Interactive D3)**: Crossfilter for "fast multidimensional filtering for coordinated views, even with a million+ records"; DOM events and `d3.selection.on()` for interactive handlers. **L7.2 (Do's and Don'ts)**: Maximize data density; avoid pie charts ("angles and areas difficult to perceive accurately"); bar chart guidelines (horizontal labels, start Y at 0, consistent colors). |
+| **Word cloud (hero)** | D3-cloud | **L9 (Text Viz)**: Tag clouds as initial query tool for identifying main words; design critique (size vs. position encoding tradeoff); adjective-noun pairs from Yatani 2011. |
+| **Regional choropleth** | D3-geo, TopoJSON | **L8 (Maps)**: Choropleth maps ("areas shaded in proportion to measurement"), projection choice (Albers USA for minimal distortion), normalizing for population density. |
+
+**Cross-cutting design principles:**
+- **L7.1 (Designing Viz)**: Problem-driven (top-down) design using the 4 nested levels (domain situation, data abstraction, visual encoding, algorithm); wireframing and sketching before implementation; deployment on GitHub Pages.
+- **L7.2 (Do's and Don'ts)**: Tufte's integrity principles — "show data variation, not design variation"; graphical integrity (consistent intervals, start at 0); maximize data-ink ratio.
+- **L6.1 (Perception & Color)**: Preattentive processing features for visual popout; Gestalt grouping principles (proximity, similarity); categorical color palettes limited to 6–8 hues.
+
+### Independent Pieces & MVP Breakdown
+
+**Core MVP (must deliver):**
+
+These are the essential visualizations that together tell the complete story of Gen Z slang evolution. Dropping any of these would leave a gap in the narrative.
+
+1. **Scrollytelling website** — Section navigation with scroll-triggered transitions using Intersection Observer API. Each section reveals the next chapter of the story (Rise → Spread → Peak & Decline → Explore). This is the backbone that ties all visualizations into a coherent narrative.
+2. **Timeline heatmap** — Rows = slang terms, columns = months (2020–2025), color = usage intensity (YlOrRd sequential colormap). Answers: *"When did each term peak?"* Interactive tooltips on hover show exact month, count, and sentiment per cell.
+3. **Platform Sankey diagram** — Origin platforms on the left, usage platforms on the right, flow width = number of term occurrences traveling that path. Answers: *"Where does slang start and where does it spread?"* Hover highlights individual flows with details.
+4. **Bubble chart with lifecycle phases** — Each bubble = a slang term. Color = lifecycle phase (green/growing, red/peak, orange/declining, gray/dormant), size = monthly usage count. Both channels animate over time via a timeline slider. Answers: *"How do terms rise and fall?"* Hover tooltip shows term meaning, origin, sentiment, and phase.
+5. **Interactive tooltips on every visualization** — At minimum, hovering any data element reveals detailed information. This follows Shneiderman's "details on demand" principle.
+6. **Animated word cloud hero section** — Floating slang terms using D3 force simulation as the landing page visual. Terms drift and collide gently, creating an organic first impression before the user scrolls into the data story.
+7. **Responsive layout** — Desktop-first design that adapts gracefully to different screen sizes.
+
+**Stretch goals (enhance but could be dropped without endangering project meaning):**
+
+These add depth, creativity, and polish. Each is independent and can be implemented in any order.
+
+1. **Bubble race chart** — Bar-chart-race style animation where slang terms compete in ranked lanes over time. A play button and timeline slider let the user watch terms overtake each other (e.g., "sigma" surging from #4 to #1). This adds a gamified, engaging dimension to the temporal story.
+2. **Sentiment constellation map ("The Slang Cosmos")** — A scatter plot with X = sentiment, Y = intensity, size = usage. Terms in the same category are connected into constellations on a dark sky background. This reveals that sentiment and intensity are independent (r ≈ 0.01) — a term can be mildly negative yet used with extreme passion.
+3. **Regional US choropleth** — A D3-geo map colored by slang adoption intensity per state. The dataset covers 12 US states and 10 international regions (66% US, 34% international by occurrence). A dropdown could filter by specific term to see geographic spread.
+4. **Sentiment ridgeline plot** — Overlapping density curves (one per slang category) showing the full sentiment distribution, not just averages. The gradient fill transitions from red (negative) through purple (neutral) to green (positive). This is the most aesthetically striking way to show sentiment patterns.
+5. **Cross-view filtering via Crossfilter** — Selecting a term in one visualization highlights it in all others. Brushing a time range on the heatmap filters the Sankey and bubble chart simultaneously. This transforms isolated charts into a unified analytical tool.
+6. **Gen Z-themed micro-interactions** — Glassmorphism card tooltips, neon glow effects, pill-shaped filter buttons, slang-inspired copy ("hold up bestie..." instead of "Loading..."), hover animations with glow rings and spring easing. These design choices make the website feel native to Gen Z culture rather than a generic dashboard.
+
+
+### Functional Prototype
+
+Our working prototype is in the `website/` directory. To run locally:
+
+```bash
+cd website
+python -m http.server 8080
+# Open http://localhost:8080
+```
+
+The prototype includes:
+- A hero section with floating slang terms (D3 force simulation)
+- An interactive timeline heatmap with tooltips (fully functional)
+- A Sankey diagram showing platform flows (fully functional)
+- A bubble chart showing term lifecycles (fully functional)
+- Placeholder cards for the Explore section (Milestone 3)
 
 
 ## Milestone 3 (29th May, 5pm)
@@ -73,4 +188,3 @@ Here are a couple visualizations that we found interesting and that we think mig
 
 - < 24h: 80% of the grade for the milestone
 - < 48h: 70% of the grade for the milestone
-
