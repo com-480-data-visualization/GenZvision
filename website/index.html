@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GenZvision — How Gen Z Slang Lives and Dies on the Internet</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Scroll progress indicator -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
+    <!-- Animated background orbs -->
+    <div class="bg-orbs" aria-hidden="true">
+        <div class="bg-orb bg-orb-1"></div>
+        <div class="bg-orb bg-orb-2"></div>
+        <div class="bg-orb bg-orb-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="nav">
+        <div class="nav-brand">GenZvision</div>
+        <div class="nav-links">
+            <a href="#hero" class="nav-link active" data-section="hero">Home</a>
+            <a href="#rise" class="nav-link" data-section="rise">The Rise</a>
+            <a href="#spread" class="nav-link" data-section="spread">The Spread</a>
+            <a href="#lifecycle" class="nav-link" data-section="lifecycle">Peak & Decline</a>
+            <a href="#explore" class="nav-link" data-section="explore">Explore</a>
+        </div>
+    </nav>
+
+    <!-- Section 1: Hero / Intro -->
+    <section id="hero" class="section section-hero">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="title-line">How Gen Z Slang</span>
+                <span class="title-line"><span class="highlight">Lives and Dies</span></span>
+                <span class="title-line">on the Internet</span>
+            </h1>
+            <p class="hero-subtitle">A data-driven dive into the rise, spread, and decline of internet language from 2020 to 2025.</p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="hero-stat-num" data-count-to="46">0</span>
+                    <span class="hero-stat-label">Slang Terms</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-num" data-count-to="6">0</span>
+                    <span class="hero-stat-label">Platforms</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-num" data-count-to="22">0</span>
+                    <span class="hero-stat-label">Regions</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-num" data-count-to="535396" data-suffix="+">0</span>
+                    <span class="hero-stat-label">Observations</span>
+                </div>
+            </div>
+            <div class="hero-scroll-hint">
+                <span>Scroll to explore</span>
+                <div class="scroll-arrow"></div>
+            </div>
+        </div>
+        <div id="hero-viz" class="viz-container">
+            <!-- D3 floating word cloud will render here -->
+        </div>
+    </section>
+
+    <!-- Section 2: The Rise -->
+    <section id="rise" class="section section-story">
+        <div class="section-text">
+            <h2 class="section-title">The Rise</h2>
+            <p class="section-intro">When does slang emerge? Some terms explode overnight. Others build momentum over months. This heatmap shows the monthly pulse of the top 15 slang terms — watch for the bright streaks that mark their peak moments.</p>
+            <div class="insight-card">
+                <strong>Key insight:</strong> "Slay" dominates with 19,000+ observations, but newer terms like "delulu" show rapid growth patterns.
+            </div>
+        </div>
+        <div class="section-viz">
+            <div id="timeline-viz" class="viz-container">
+                <!-- D3 timeline heatmap will render here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: The Spread -->
+    <section id="spread" class="section section-story">
+        <div class="section-text">
+            <h2 class="section-title">The Spread</h2>
+            <p class="section-intro">Slang doesn't stay on one platform. A term coined on TikTok migrates to Twitter, Reddit, and beyond. This Sankey diagram reveals the flow — where terms originate versus where they actually get used.</p>
+            <div class="insight-card">
+                <strong>Key insight:</strong> TikTok originates 52% of all slang but captures only 40% of usage. Discord appears only as a destination — a pure adoption platform.
+            </div>
+        </div>
+        <div class="section-viz">
+            <div id="sankey-viz" class="viz-container">
+                <!-- D3 Sankey diagram will render here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Peak & Decline -->
+    <section id="lifecycle" class="section section-story">
+        <div class="section-text">
+            <h2 class="section-title">Peak & Decline</h2>
+            <p class="section-intro">Every slang term has a lifecycle: growing, peaking, declining, dormant. This bubble chart maps each term's journey — bigger bubbles mean more total usage, colors show the current phase.</p>
+            <div class="insight-card">
+                <strong>Key insight:</strong> 38% of tracked terms are already in decline. Virality is rare — only 0.1% of posts go viral — but when it hits, it defines a term's peak.
+            </div>
+        </div>
+        <div class="section-viz">
+            <div id="bubble-viz" class="viz-container">
+                <!-- D3 bubble chart will render here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Explore (stub/wireframe for M2) -->
+    <section id="explore" class="section section-explore">
+        <div class="explore-header">
+            <h2 class="section-title">Explore the Data</h2>
+            <p class="section-intro">Dive deeper. Filter by term, platform, age group, or region. Coordinated views update in real-time as you interact.</p>
+        </div>
+        <div class="explore-grid">
+            <div class="explore-card">
+                <h3>Filter by Term</h3>
+                <div id="term-filter" class="placeholder-viz">
+                    <p class="placeholder-text">Interactive term selector<br><em>(Coming in Milestone 3)</em></p>
+                </div>
+            </div>
+            <div class="explore-card">
+                <h3>Age Group Breakdown</h3>
+                <div id="age-viz" class="placeholder-viz">
+                    <p class="placeholder-text">Age group distribution chart<br><em>(Coming in Milestone 3)</em></p>
+                </div>
+            </div>
+            <div class="explore-card">
+                <h3>Regional Patterns</h3>
+                <div id="region-viz" class="placeholder-viz">
+                    <p class="placeholder-text">Regional choropleth map<br><em>(Coming in Milestone 3)</em></p>
+                </div>
+            </div>
+            <div class="explore-card">
+                <h3>Sentiment Analysis</h3>
+                <div id="sentiment-viz" class="placeholder-viz">
+                    <p class="placeholder-text">Sentiment breakdown by category<br><em>(Coming in Milestone 3)</em></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>GenZvision — COM-480 Data Visualization Project, EPFL 2026</p>
+        <p class="footer-team">Rania Boubrik &middot; Maryam Harakat &middot; Rosa Mayila &middot; Valentin Planes</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/d3-sankey@0.12.3/dist/d3-sankey.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/timeline.js"></script>
+    <script src="js/sankey.js"></script>
+    <script src="js/bubbles.js"></script>
+</body>
+</html>
