@@ -124,3 +124,40 @@ function renderHeroViz() {
 
 // Trigger hero immediately
 renderHeroViz();
+
+// === Scroll progress bar ===
+const progressBar = document.getElementById('scroll-progress');
+function updateProgress() {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const pct = height > 0 ? (scrollTop / height) * 100 : 0;
+    if (progressBar) progressBar.style.width = pct + '%';
+}
+window.addEventListener('scroll', updateProgress, { passive: true });
+updateProgress();
+
+// === Animated number counters in hero ===
+function animateCounter(el) {
+    const target = parseInt(el.dataset.countTo, 10);
+    const suffix = el.dataset.suffix || '';
+    const duration = 1800; // ms
+    const startTime = performance.now();
+    const formatter = new Intl.NumberFormat('en-US');
+
+    function tick(now) {
+        const elapsed = now - startTime;
+        const t = Math.min(elapsed / duration, 1);
+        // easeOutCubic
+        const eased = 1 - Math.pow(1 - t, 3);
+        const value = Math.floor(target * eased);
+        el.textContent = formatter.format(value) + suffix;
+        if (t < 1) requestAnimationFrame(tick);
+        else el.textContent = formatter.format(target) + suffix;
+    }
+    requestAnimationFrame(tick);
+}
+
+// Kick off counters shortly after the hero stats fade in (1.15s delay)
+setTimeout(() => {
+    document.querySelectorAll('.hero-stat-num[data-count-to]').forEach(animateCounter);
+}, 1250);

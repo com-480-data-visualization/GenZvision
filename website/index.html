@@ -8,6 +8,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Scroll progress indicator -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
+    <!-- Animated background orbs -->
+    <div class="bg-orbs" aria-hidden="true">
+        <div class="bg-orb bg-orb-1"></div>
+        <div class="bg-orb bg-orb-2"></div>
+        <div class="bg-orb bg-orb-3"></div>
+    </div>
+
     <!-- Navigation -->
     <nav id="nav">
         <div class="nav-brand">GenZvision</div>
@@ -23,8 +33,30 @@
     <!-- Section 1: Hero / Intro -->
     <section id="hero" class="section section-hero">
         <div class="hero-content">
-            <h1 class="hero-title">How Gen Z Slang<br><span class="highlight">Lives and Dies</span><br>on the Internet</h1>
-            <p class="hero-subtitle">Tracking 46 slang terms across 6 platforms, 22 regions, and 535,000+ observations from 2020 to 2025.</p>
+            <h1 class="hero-title">
+                <span class="title-line">How Gen Z Slang</span>
+                <span class="title-line"><span class="highlight">Lives and Dies</span></span>
+                <span class="title-line">on the Internet</span>
+            </h1>
+            <p class="hero-subtitle">A data-driven dive into the rise, spread, and decline of internet language from 2020 to 2025.</p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="hero-stat-num" data-count-to="46">0</span>
+                    <span class="hero-stat-label">Slang Terms</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-num" data-count-to="6">0</span>
+                    <span class="hero-stat-label">Platforms</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-num" data-count-to="22">0</span>
+                    <span class="hero-stat-label">Regions</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-num" data-count-to="535396" data-suffix="+">0</span>
+                    <span class="hero-stat-label">Observations</span>
+                </div>
+            </div>
             <div class="hero-scroll-hint">
                 <span>Scroll to explore</span>
                 <div class="scroll-arrow"></div>
