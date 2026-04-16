@@ -91,7 +91,7 @@ Each row is a slang term, each column is a month (2020–2025), and color intens
 
 Left nodes represent origin platforms, right nodes represent usage platforms. The width of each flow encodes the number of terms that traveled that path. This reveals cross-platform diffusion patterns like terms born on TikTok spreading to Twitter and Reddit.
 
-![Platform Flow Sketch](data/sketches/sketch_sankey.jpg)
+[![Platform Flow Sketch](data/sketches/sketch_sankey.jpg)](https://github.com/com-480-data-visualization/GenZvision/blob/master/data/sketches/platform_flow.json)
 
 **3. Bubble Chart: Term Lifecycle and Popularity (Dynamic + Static Views)**
 
