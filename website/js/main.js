@@ -54,6 +54,9 @@ function triggerSectionViz(sectionId) {
         case 'rise':
             if (typeof renderTimeline === 'function') renderTimeline();
             break;
+        case 'race':
+            if (typeof renderRace === 'function') renderRace();
+            break;
         case 'spread':
             if (typeof renderSankey === 'function') renderSankey();
             break;
@@ -99,8 +102,8 @@ function renderHeroViz() {
             .data(nodes)
             .enter()
             .append('text')
-            .text(d => d.slang_term)
-            .attr('font-family', 'Space Grotesk, sans-serif')
+            .text(d => d.slang_term.replace(/\b\w/g, c => c.toUpperCase()))
+            .attr('font-family', 'Outfit, sans-serif')
             .attr('font-size', d => d.fontSize + 'px')
             .attr('font-weight', 600)
             .attr('fill', (d, i) => d3.interpolateViridis(i / nodes.length))

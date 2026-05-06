@@ -19,8 +19,8 @@
     --red: #e74c3c;
     --orange: #f39c12;
     --gray: #95a5a6;
-    --font-heading: 'Space Grotesk', sans-serif;
-    --font-body: 'Inter', sans-serif;
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
 }
 
 html {
@@ -452,7 +452,7 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 12px;
     padding: 1.5rem;
-    min-height: 450px;
+    min-height: 520px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -657,6 +657,100 @@ body {
     text-anchor: middle;
     pointer-events: none;
     font-weight: 500;
+}
+
+/* === VIZ CONTROLS (play button + slider) === */
+.viz-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding: 0.75rem 1.25rem;
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+}
+
+.viz-controls .play-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent-pink));
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 12px rgba(124, 58, 237, 0.3);
+}
+
+.viz-controls .play-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.5);
+}
+
+.viz-controls .time-slider {
+    flex: 1;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 6px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.1);
+    outline: none;
+    cursor: pointer;
+}
+
+.viz-controls .time-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-light), var(--accent-pink));
+    cursor: pointer;
+    box-shadow: 0 0 8px rgba(124, 58, 237, 0.5);
+    transition: transform 0.15s ease;
+}
+
+.viz-controls .time-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+.viz-controls .time-slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-light), var(--accent-pink));
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 8px rgba(124, 58, 237, 0.5);
+}
+
+.viz-controls .current-month {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--accent-light);
+    min-width: 80px;
+    text-align: right;
+    white-space: nowrap;
+}
+
+/* === RACE CHART STYLES === */
+.race-bar-rect {
+    transition: fill 0.2s ease;
+}
+
+.race-bar:hover .race-bar-rect {
+    filter: brightness(1.25);
+}
+
+.race-bar {
+    cursor: pointer;
 }
 
 /* === RESPONSIVE === */
