@@ -27,6 +27,7 @@
             <a href="#race" class="nav-link" data-section="race">The Race</a>
             <a href="#spread" class="nav-link" data-section="spread">The Spread</a>
             <a href="#lifecycle" class="nav-link" data-section="lifecycle">Peak & Decline</a>
+            <a href="#agegroups" class="nav-link" data-section="agegroups">Who Says It?</a>
             <a href="#explore" class="nav-link" data-section="explore">Explore</a>
         </div>
     </nav>
@@ -142,7 +143,23 @@
         </div>
     </section>
 
-    <!-- Section 5: Explore (stub/wireframe for M2) -->
+    <!-- Section 5: Who Says It? — Age Group Breakdown -->
+    <section id="agegroups" class="section section-story">
+        <div class="section-text">
+            <h2 class="section-title">Who Says It?</h2>
+            <p class="section-intro">Not all slang belongs to the same generation. Some terms are pure Gen Z territory — born on TikTok, owned by teenagers. Others have crossed generational lines and aged into the mainstream. This chart reveals the age DNA of every slang term.</p>
+            <div class="insight-card">
+                <strong>Key insight:</strong> "Skibidi" and "Main Character" skew youngest, with 60%+ of users under 25. Meanwhile terms like "Slay" have spread across all age groups — a sign of true cultural reach.
+            </div>
+        </div>
+        <div class="section-viz">
+            <div id="age-viz" class="viz-container age-viz-container">
+                <!-- D3 age group stacked bar chart will render here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Explore (stub/wireframe for M2) -->
     <section id="explore" class="section section-explore">
         <div class="explore-header">
             <h2 class="section-title">Explore the Data</h2>
@@ -190,5 +207,6 @@
     <script src="js/sankey.js"></script>
     <script src="js/race.js"></script>
     <script src="js/bubbles.js"></script>
+    <script src="js/agegroups.js"></script>
 </body>
 </html>

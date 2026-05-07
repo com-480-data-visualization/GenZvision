@@ -753,6 +753,16 @@ body {
     cursor: pointer;
 }
 
+/* === AGE GROUP CHART === */
+.age-viz-container {
+    min-height: 760px;
+    overflow: visible;
+}
+
+.age-viz-container svg {
+    overflow: visible;
+}
+
 /* === RESPONSIVE === */
 @media (max-width: 900px) {
     .section-story {

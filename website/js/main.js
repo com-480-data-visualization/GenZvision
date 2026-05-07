@@ -63,6 +63,9 @@ function triggerSectionViz(sectionId) {
         case 'lifecycle':
             if (typeof renderBubbles === 'function') renderBubbles();
             break;
+        case 'agegroups':
+            if (typeof renderAgeGroups === 'function') renderAgeGroups();
+            break;
     }
 }
 
