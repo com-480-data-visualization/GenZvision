@@ -753,6 +753,18 @@ body {
     cursor: pointer;
 }
 
+/* === GANTT CHART === */
+.gantt-container {
+    min-height: 1120px !important;
+    align-items: flex-start !important;
+    padding: 1rem 0.5rem !important;
+    overflow-x: auto;
+}
+
+.gantt-container svg {
+    overflow: visible;
+}
+
 /* === RESPONSIVE === */
 @media (max-width: 900px) {
     .section-story {
