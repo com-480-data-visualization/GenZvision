@@ -63,9 +63,6 @@ function triggerSectionViz(sectionId) {
         case 'lifecycle':
             if (typeof renderBubbles === 'function') renderBubbles();
             break;
-        case 'seasons':
-            if (typeof renderGantt === 'function') renderGantt();
-            break;
     }
 }
 
