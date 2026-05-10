@@ -1,0 +1,750 @@
+[
+  {
+    "context": "casual_conversation",
+    "total_usage": 17997,
+    "sentiment": {
+      "positive": 48.5,
+      "neutral": 31.2,
+      "negative": 20.3
+    },
+    "avg_intensity": 0.656,
+    "age_counts": {
+      "18-24": 6444,
+      "13-17": 4562,
+      "25-30": 3598,
+      "31-40": 2040,
+      "41+": 1353
+    },
+    "age_pcts": {
+      "18-24": 35.8,
+      "13-17": 25.3,
+      "25-30": 20.0,
+      "31-40": 11.3,
+      "41+": 7.5
+    },
+    "terms": [
+      {
+        "term": "slay",
+        "count": 1105,
+        "dominant_sentiment": "positive",
+        "dominant_age": "18-24"
+      },
+      {
+        "term": "based",
+        "count": 1088,
+        "dominant_sentiment": "positive",
+        "dominant_age": "13-17"
+      },
+      {
+        "term": "gaslighting",
+        "count": 1023,
+        "dominant_sentiment": "negative",
+        "dominant_age": "25-30"
+      }
+    ]
+  },
+  {
+    "context": "criticism",
+    "total_usage": 17971,
+    "sentiment": {
+      "positive": 49.0,
+      "neutral": 30.2,
+      "negative": 20.8
+    },
+    "avg_intensity": 0.655,
+    "age_counts": {
+      "18-24": 6375,
+      "13-17": 4491,
+      "25-30": 3542,
+      "31-40": 2114,
+      "41+": 1449
+    },
+    "age_pcts": {
+      "18-24": 35.5,
+      "13-17": 25.0,
+      "25-30": 19.7,
+      "31-40": 11.8,
+      "41+": 8.1
+    },
+    "terms": [
+      {
+        "term": "slay",
+        "count": 1141,
+        "dominant_sentiment": "positive",
+        "dominant_age": "41+"
+      },
+      {
+        "term": "based",
+        "count": 1065,
+        "dominant_sentiment": "positive",
+        "dominant_age": "41+"
+      },
+      {
+        "term": "gaslighting",
+        "count": 1064,
+        "dominant_sentiment": "negative",
+        "dominant_age": "41+"
+      }
+    ]
+  },
+  {
+    "context": "meme_reference",
+    "total_usage": 17915,
+    "sentiment": {
+      "positive": 49.1,
+      "neutral": 30.6,
+      "negative": 20.3
+    },
+    "avg_intensity": 0.656,
+    "age_counts": {
+      "18-24": 6228,
+      "13-17": 4521,
+      "25-30": 3647,
+      "31-40": 2134,
+      "41+": 1385
+    },
+    "age_pcts": {
+      "18-24": 34.8,
+      "13-17": 25.2,
+      "25-30": 20.4,
+      "31-40": 11.9,
+      "41+": 7.7
+    },
+    "terms": [
+      {
+        "term": "based",
+        "count": 1155,
+        "dominant_sentiment": "positive",
+        "dominant_age": "25-30"
+      },
+      {
+        "term": "slay",
+        "count": 1083,
+        "dominant_sentiment": "positive",
+        "dominant_age": "13-17"
+      },
+      {
+        "term": "rizz",
+        "count": 1024,
+        "dominant_sentiment": "positive",
+        "dominant_age": "41+"
+      }
+    ]
+  },
+  {
+    "context": "commenting",
+    "total_usage": 17913,
+    "sentiment": {
+      "positive": 48.4,
+      "neutral": 31.3,
+      "negative": 20.2
+    },
+    "avg_intensity": 0.658,
+    "age_counts": {
+      "18-24": 6229,
+      "13-17": 4449,
+      "25-30": 3569,
+      "31-40": 2188,
+      "41+": 1478
+    },
+    "age_pcts": {
+      "18-24": 34.8,
+      "13-17": 24.8,
+      "25-30": 19.9,
+      "31-40": 12.2,
+      "41+": 8.3
+    },
+    "terms": [
+      {
+        "term": "slay",
+        "count": 1146,
+        "dominant_sentiment": "positive",
+        "dominant_age": "13-17"
+      },
+      {
+        "term": "based",
+        "count": 1113,
+        "dominant_sentiment": "positive",
+        "dominant_age": "41+"
+      },
+      {
+        "term": "bussin",
+        "count": 1016,
+        "dominant_sentiment": "positive",
+        "dominant_age": "31-40"
+      }
+    ]
+  },
+  {
+    "context": "news_reaction",
+    "total_usage": 17878,
+    "sentiment": {
+      "positive": 49.3,
+      "neutral": 30.6,
+      "negative": 20.1
+    },
+    "avg_intensity": 0.655,
+    "age_counts": {
+      "18-24": 6123,
+      "13-17": 4438,
+      "25-30": 3589,
+      "31-40": 2209,
+      "41+": 1519
+    },
+    "age_pcts": {
+      "18-24": 34.2,
+      "13-17": 24.8,
+      "25-30": 20.1,
+      "31-40": 12.4,
+      "41+": 8.5
+    },
+    "terms": [
+      {
+        "term": "based",
+        "count": 1132,
+        "dominant_sentiment": "positive",
+        "dominant_age": "13-17"
+      },
+      {
+        "term": "slay",
+        "count": 1094,
+        "dominant_sentiment": "positive",
+        "dominant_age": "31-40"
+      },
+      {
+        "term": "bussin",
+        "count": 1035,
+        "dominant_sentiment": "positive",
+        "dominant_age": "41+"
+      }
+    ]
+  },
+  {
+    "context": "storytelling",
+    "total_usage": 17877,
+    "sentiment": {
+      "positive": 48.2,
+      "neutral": 31.0,
+      "negative": 20.9
+    },
+    "avg_intensity": 0.655,
+    "age_counts": {
+      "18-24": 6272,
+      "13-17": 4505,
+      "25-30": 3557,
+      "31-40": 2057,
+      "41+": 1486
+    },
+    "age_pcts": {
+      "18-24": 35.1,
+      "13-17": 25.2,
+      "25-30": 19.9,
+      "31-40": 11.5,
+      "41+": 8.3
+    },
+    "terms": [
+      {
+        "term": "slay",
+        "count": 1098,
+        "dominant_sentiment": "positive",
+        "dominant_age": "31-40"
+      },
+      {
+        "term": "bussin",
+        "count": 1070,
+        "dominant_sentiment": "positive",
+        "dominant_age": "18-24"
+      },
+      {
+        "term": "based",
+        "count": 1031,
+        "dominant_sentiment": "positive",
+        "dominant_age": "41+"
+      }
+    ]
+  },
+  {
+    "context": "humor",
+    "total_usage": 17866,
+    "sentiment": {
+      "positive": 48.1,
+      "neutral": 30.8,
+      "negative": 21.1
+    },
+    "avg_intensity": 0.655,
+    "age_counts": {
+      "18-24": 6325,
+      "13-17": 4401,
+      "25-30": 3599,
+      "31-40": 2141,
+      "41+": 1400
+    },
+    "age_pcts": {
+      "18-24": 35.4,
+      "13-17": 24.6,
+      "25-30": 20.1,
+      "31-40": 12.0,
+      "41+": 7.8
+    },
+    "terms": [
+      {
+        "term": "slay",
+        "count": 1152,
+        "dominant_sentiment": "positive",
+        "dominant_age": "31-40"
+      },
+      {
+        "term": "based",
+        "count": 1095,
+        "dominant_sentiment": "positive",
+        "dominant_age": "41+"
+      },
+      {
+        "term": "bussin",
+        "count": 1072,
+        "dominant_sentiment": "positive",
+        "dominant_age": "13-17"
+      }
+    ]
+  },
+  {
+    "context": "food_related",
+    "total_usage": 17842,
+    "sentiment": {
+      "positive": 48.4,
+      "neutral": 30.4,
+      "negative": 21.2
+    },
+    "avg_intensity": 0.655,
+    "age_counts": {
+      "18-24": 6245,
+      "13-17": 4488,
+      "25-30": 3556,
+      "31-40": 2127,
+      "41+": 1426
+    },
+    "age_pcts": {
+      "18-24": 35.0,
+      "13-17": 25.2,
+      "25-30": 19.9,
+      "31-40": 11.9,
+      "41+": 8.0
+    },
+    "terms": [
+      {
+        "term": "slay",
+        "count": 1081,
+        "dominant_sentiment": "positive",
+        "dominant_age": "41+"
+      },
+      {
+        "term": "based",
+        "count": 1078,
+        "dominant_sentiment": "positive",
+        "dominant_age": "31-40"
+      },
+      {
+        "term": "bussin",
+        "count": 1020,
+        "dominant_sentiment": "positive",
+        "dominant_age": "25-30"
+      }
+    ]
+  },
+  {
+    "context": "gaming",
+    "total_usage": 17831,
+    "sentiment": {
+      "positive": 48.6,
+      "neutral": 30.7,
+      "negative": 20.7
+    },
+    "avg_intensity": 0.653,
+    "age_counts": {
+      "18-24": 6179,
+      "13-17": 4475,
+      "25-30": 3638,
+      "31-40": 2153,
+      "41+": 1386
+    },
+    "age_pcts": {
+      "18-24": 34.7,
+      "13-17": 25.1,
+      "25-30": 20.4,
+      "31-40": 12.1,
+      "41+": 7.8
+    },
+    "terms": [
+      {
+        "term": "slay",
+        "count": 1112,
+        "dominant_sentiment": "positive",
+        "dominant_age": "18-24"
+      },
+      {
+        "term": "based",
+        "count": 1054,
+        "dominant_sentiment": "positive",
+        "dominant_age": "13-17"
+      },
+      {
+        "term": "gaslighting",
+        "count": 1044,
+        "dominant_sentiment": "negative",
+        "dominant_age": "13-17"
+      }
+    ]
+  },
+  {
+    "context": "self_description",
+    "total_usage": 17824,
+    "sentiment": {
+      "positive": 49.8,
+      "neutral": 30.3,
+      "negative": 19.9
+    },
+    "avg_intensity": 0.657,
+    "age_counts": {
+      "18-24": 6211,
+      "13-17": 4427,
+      "25-30": 3655,
+      "31-40": 2134,
+      "41+": 1397
+    },
+    "age_pcts": {
+      "18-24": 34.8,
+      "13-17": 24.8,
+      "25-30": 20.5,
+      "31-40": 12.0,
+      "41+": 7.8
+    },
+    "terms": [
+      {
+        "term": "slay",
+        "count": 1165,
+        "dominant_sentiment": "positive",
+        "dominant_age": "41+"
+      },
+      {
+        "term": "bussin",
+        "count": 1139,
+        "dominant_sentiment": "positive",
+        "dominant_age": "31-40"
+      },
+      {
+        "term": "based",
+        "count": 1073,
+        "dominant_sentiment": "positive",
+        "dominant_age": "31-40"
+      }
+    ]
+  },
+  {
+    "context": "reaction",
+    "total_usage": 17816,
+    "sentiment": {
+      "positive": 48.2,
+      "neutral": 31.1,
+      "negative": 20.7
+    },
+    "avg_intensity": 0.65,
+    "age_counts": {
+      "18-24": 6264,
+      "13-17": 4529,
+      "25-30": 3503,
+      "31-40": 2115,
+      "41+": 1405
+    },
+    "age_pcts": {
+      "18-24": 35.2,
+      "13-17": 25.4,
+      "25-30": 19.7,
+      "31-40": 11.9,
+      "41+": 7.9
+    },
+    "terms": [
+      {
+        "term": "based",
+        "count": 1108,
+        "dominant_sentiment": "positive",
+        "dominant_age": "18-24"
+      },
+      {
+        "term": "bussin",
+        "count": 1090,
+        "dominant_sentiment": "positive",
+        "dominant_age": "41+"
+      },
+      {
+        "term": "slay",
+        "count": 1075,
+        "dominant_sentiment": "positive",
+        "dominant_age": "31-40"
+      }
+    ]
+  },
+  {
+    "context": "music_discussion",
+    "total_usage": 17791,
+    "sentiment": {
+      "positive": 49.0,
+      "neutral": 30.1,
+      "negative": 21.0
+    },
+    "avg_intensity": 0.655,
+    "age_counts": {
+      "18-24": 6189,
+      "13-17": 4465,
+      "25-30": 3541,
+      "31-40": 2143,
+      "41+": 1453
+    },
+    "age_pcts": {
+      "18-24": 34.8,
+      "13-17": 25.1,
+      "25-30": 19.9,
+      "31-40": 12.0,
+      "41+": 8.2
+    },
+    "terms": [
+      {
+        "term": "slay",
+        "count": 1167,
+        "dominant_sentiment": "positive",
+        "dominant_age": "31-40"
+      },
+      {
+        "term": "based",
+        "count": 1104,
+        "dominant_sentiment": "positive",
+        "dominant_age": "31-40"
+      },
+      {
+        "term": "bussin",
+        "count": 1050,
+        "dominant_sentiment": "positive",
+        "dominant_age": "41+"
+      }
+    ]
+  },
+  {
+    "context": "celebrity_gossip",
+    "total_usage": 17788,
+    "sentiment": {
+      "positive": 48.9,
+      "neutral": 30.6,
+      "negative": 20.5
+    },
+    "avg_intensity": 0.654,
+    "age_counts": {
+      "18-24": 6301,
+      "13-17": 4423,
+      "25-30": 3530,
+      "31-40": 2128,
+      "41+": 1406
+    },
+    "age_pcts": {
+      "18-24": 35.4,
+      "13-17": 24.9,
+      "25-30": 19.8,
+      "31-40": 12.0,
+      "41+": 7.9
+    },
+    "terms": [
+      {
+        "term": "slay",
+        "count": 1145,
+        "dominant_sentiment": "positive",
+        "dominant_age": "41+"
+      },
+      {
+        "term": "based",
+        "count": 1037,
+        "dominant_sentiment": "positive",
+        "dominant_age": "31-40"
+      },
+      {
+        "term": "bussin",
+        "count": 1033,
+        "dominant_sentiment": "positive",
+        "dominant_age": "18-24"
+      }
+    ]
+  },
+  {
+    "context": "dating_context",
+    "total_usage": 17711,
+    "sentiment": {
+      "positive": 48.6,
+      "neutral": 30.8,
+      "negative": 20.7
+    },
+    "avg_intensity": 0.652,
+    "age_counts": {
+      "18-24": 6127,
+      "13-17": 4446,
+      "25-30": 3568,
+      "31-40": 2137,
+      "41+": 1433
+    },
+    "age_pcts": {
+      "18-24": 34.6,
+      "13-17": 25.1,
+      "25-30": 20.1,
+      "31-40": 12.1,
+      "41+": 8.1
+    },
+    "terms": [
+      {
+        "term": "slay",
+        "count": 1107,
+        "dominant_sentiment": "positive",
+        "dominant_age": "13-17"
+      },
+      {
+        "term": "based",
+        "count": 1073,
+        "dominant_sentiment": "positive",
+        "dominant_age": "18-24"
+      },
+      {
+        "term": "bussin",
+        "count": 1061,
+        "dominant_sentiment": "positive",
+        "dominant_age": "31-40"
+      }
+    ]
+  },
+  {
+    "context": "work_school",
+    "total_usage": 17696,
+    "sentiment": {
+      "positive": 49.4,
+      "neutral": 30.6,
+      "negative": 19.9
+    },
+    "avg_intensity": 0.656,
+    "age_counts": {
+      "18-24": 6214,
+      "13-17": 4384,
+      "25-30": 3516,
+      "31-40": 2169,
+      "41+": 1413
+    },
+    "age_pcts": {
+      "18-24": 35.1,
+      "13-17": 24.8,
+      "25-30": 19.9,
+      "31-40": 12.3,
+      "41+": 8.0
+    },
+    "terms": [
+      {
+        "term": "based",
+        "count": 1098,
+        "dominant_sentiment": "positive",
+        "dominant_age": "31-40"
+      },
+      {
+        "term": "slay",
+        "count": 1086,
+        "dominant_sentiment": "positive",
+        "dominant_age": "41+"
+      },
+      {
+        "term": "bussin",
+        "count": 1012,
+        "dominant_sentiment": "positive",
+        "dominant_age": "13-17"
+      }
+    ]
+  },
+  {
+    "context": "fashion_beauty",
+    "total_usage": 17687,
+    "sentiment": {
+      "positive": 48.4,
+      "neutral": 30.5,
+      "negative": 21.1
+    },
+    "avg_intensity": 0.656,
+    "age_counts": {
+      "18-24": 6253,
+      "13-17": 4413,
+      "25-30": 3512,
+      "31-40": 2110,
+      "41+": 1399
+    },
+    "age_pcts": {
+      "18-24": 35.4,
+      "13-17": 25.0,
+      "25-30": 19.9,
+      "31-40": 11.9,
+      "41+": 7.9
+    },
+    "terms": [
+      {
+        "term": "slay",
+        "count": 1141,
+        "dominant_sentiment": "positive",
+        "dominant_age": "41+"
+      },
+      {
+        "term": "based",
+        "count": 1116,
+        "dominant_sentiment": "positive",
+        "dominant_age": "31-40"
+      },
+      {
+        "term": "rizz",
+        "count": 976,
+        "dominant_sentiment": "positive",
+        "dominant_age": "41+"
+      }
+    ]
+  },
+  {
+    "context": "compliment",
+    "total_usage": 17683,
+    "sentiment": {
+      "positive": 48.6,
+      "neutral": 30.6,
+      "negative": 20.8
+    },
+    "avg_intensity": 0.656,
+    "age_counts": {
+      "18-24": 6324,
+      "13-17": 4365,
+      "25-30": 3538,
+      "31-40": 2107,
+      "41+": 1349
+    },
+    "age_pcts": {
+      "18-24": 35.8,
+      "13-17": 24.7,
+      "25-30": 20.0,
+      "31-40": 11.9,
+      "41+": 7.6
+    },
+    "terms": [
+      {
+        "term": "based",
+        "count": 1121,
+        "dominant_sentiment": "positive",
+        "dominant_age": "18-24"
+      },
+      {
+        "term": "slay",
+        "count": 1106,
+        "dominant_sentiment": "positive",
+        "dominant_age": "25-30"
+      },
+      {
+        "term": "bussin",
+        "count": 1015,
+        "dominant_sentiment": "positive",
+        "dominant_age": "18-24"
+      }
+    ]
+  }
+]
