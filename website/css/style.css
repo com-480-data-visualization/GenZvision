@@ -762,11 +762,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 720px;
+    min-height: 780px;
+    position: relative;
 }
 
 .vibe-viz-container svg {
     overflow: visible;
+    filter: drop-shadow(0 0 40px rgba(124, 58, 237, 0.08));
 }
 
 .vibe-detail-panel {
