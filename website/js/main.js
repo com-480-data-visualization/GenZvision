@@ -66,6 +66,9 @@ function triggerSectionViz(sectionId) {
         case 'vibes':
             if (typeof renderVibeWheel === 'function') renderVibeWheel();
             break;
+        case 'cosmos':
+            if (typeof renderCosmos === 'function') renderCosmos();
+            break;
     }
 }
 
