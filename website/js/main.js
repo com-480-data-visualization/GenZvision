@@ -69,6 +69,12 @@ function triggerSectionViz(sectionId) {
         case 'cosmos':
             if (typeof renderCosmos === 'function') renderCosmos();
             break;
+        case 'regions':                                                    
+            if (typeof renderRegionalMap === 'function') renderRegionalMap(); 
+            break;
+        case 'explore':                                                             
+            if (typeof renderRegionalExplore === 'function') renderRegionalExplore(); 
+            break; 
     }
 }
 

@@ -180,7 +180,23 @@
         </div>
     </section>
 
-    <!-- Section 7: Explore (stub/wireframe for M2) -->
+    <!-- Section 7: The Map -->
+    <section id="regions" class="section section-story section-regions">
+        <div class="section-text">
+            <h2 class="section-title">The Map</h2>
+            <p class="section-intro">Slang adoption isn't uniform across the US. California and New York lead in total usage, but every state has its own signature term. This choropleth maps slang intensity across 12 tracked states — darker means more active.</p>
+            <div class="insight-card">
+                <strong>Key insight:</strong> California alone accounts for nearly 20% of all US slang usage. "Based" dominates the South and Midwest, while "slay" rules the coasts.
+            </div>
+        </div>
+        <div class="section-viz">
+            <div id="regional-map-viz" class="viz-container">
+                <!-- D3 regional choropleth map will render here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 8: Explore (stub/wireframe for M2) -->
     <section id="explore" class="section section-explore">
         <div class="explore-header">
             <h2 class="section-title">Explore the Data</h2>
@@ -223,6 +239,7 @@
     <!-- Scripts -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://unpkg.com/d3-sankey@0.12.3/dist/d3-sankey.min.js"></script>
+    <script src="https://unpkg.com/topojson-client@3/dist/topojson-client.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/timeline.js"></script>
     <script src="js/sankey.js"></script>
@@ -230,5 +247,8 @@
     <script src="js/bubbles.js"></script>
     <script src="js/vibewheel.js"></script>
     <script src="js/cosmos.js"></script>
+    <script src="js/regional.js"></script>
+    <script src="js/explore_regional.js"></script>
+    
 </body>
 </html>
