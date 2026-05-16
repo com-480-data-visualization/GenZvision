@@ -296,7 +296,7 @@ function renderPanel(rec, panelDiv) {
 
     bSvg.append('g')
         .attr('transform', `translate(0,${bh})`)
-        .call(d3.axisBottom(xScale).ticks(3).tickFormat(d3.format(',s')))
+        .call(d3.axisBottom(xScale).ticks(3).tickFormat(d3.format(',d')))  // ',s' → ',d'
         .call(g => g.select('.domain').remove())
         .selectAll('text')
         .style('font-size', '8px')
@@ -310,47 +310,4 @@ function renderPanel(rec, panelDiv) {
         <span style="display:flex;align-items:center;gap:3px;"><span style="width:8px;height:8px;border-radius:2px;background:#e74c3c;display:inline-block;"></span>Negative</span>
     `;
     panelDiv.appendChild(barLegend);
-
-    const divider2 = document.createElement('div');
-    divider2.style.cssText = 'height:1px; background:rgba(255,255,255,0.06); margin:0 -1rem;';
-    panelDiv.appendChild(divider2);
-
-    // ── Sentiment breakdown ───────────────────────────────────────────────────
-    const sentLabel = document.createElement('div');
-    sentLabel.style.cssText = 'font-size:0.7rem; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; color:var(--text-secondary,#a0a0b0);';
-    sentLabel.textContent = 'Sentiment Split';
-    panelDiv.appendChild(sentLabel);
-
-    const s = rec.sentiment;
-    const sentData = [
-        { label: 'Positive', pct: s.pct_positive, color: '#2ecc71' },
-        { label: 'Neutral',  pct: s.pct_neutral,  color: '#f1c40f' },
-        { label: 'Negative', pct: s.pct_negative, color: '#e74c3c' },
-    ];
-
-    const stackBar = document.createElement('div');
-    stackBar.style.cssText = 'display:flex; height:10px; border-radius:5px; overflow:hidden; width:100%;';
-    sentData.forEach(d => {
-        const seg = document.createElement('div');
-        seg.style.cssText = `width:${d.pct}%; background:${d.color};`;
-        seg.title = `${d.label}: ${d.pct}%`;
-        stackBar.appendChild(seg);
-    });
-    panelDiv.appendChild(stackBar);
-
-    const sentRows = document.createElement('div');
-    sentRows.style.cssText = 'display:flex; flex-direction:column; gap:3px;';
-    sentData.forEach(d => {
-        const row = document.createElement('div');
-        row.style.cssText = 'display:flex; align-items:center; justify-content:space-between; font-size:11px;';
-        row.innerHTML = `
-            <span style="display:flex;align-items:center;gap:5px;color:var(--text-secondary,#a0a0b0);">
-                <span style="width:8px;height:8px;border-radius:2px;background:${d.color};display:inline-block;"></span>
-                ${d.label}
-            </span>
-            <span style="color:var(--text-primary,#f0f0f5); font-weight:500;">${d.pct}%</span>
-        `;
-        sentRows.appendChild(row);
-    });
-    panelDiv.appendChild(sentRows);
 }
