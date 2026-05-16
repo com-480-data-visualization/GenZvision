@@ -1,0 +1,974 @@
+{
+  "meta": {
+    "total_terms": 46,
+    "total_constellations": 17,
+    "x_field": "sentiment",
+    "y_field": "intensity",
+    "size_field": "total_usage",
+    "x_label": "Sentiment  (negative ← 0 → positive)",
+    "y_label": "Intensity  (low → high usage energy)",
+    "sentiment_range": [
+      -0.447,
+      0.457
+    ],
+    "intensity_range": [
+      0.575,
+      0.726
+    ],
+    "total_usage_range": [
+      3328,
+      19004
+    ],
+    "correlation": 0.062,
+    "insight": "Sentiment and intensity are nearly uncorrelated (r = 0.062) — a term can be deeply negative yet used with extreme intensity, or cheerful but rarely deployed."
+  },
+  "constellations": [
+    {
+      "id": "approval",
+      "label": "Approval",
+      "color": "#FFD700",
+      "description": "Terms celebrating excellence & validation",
+      "centroid": {
+        "x": 0.452,
+        "y": 0.654
+      },
+      "terms": [
+        "slay",
+        "based",
+        "bussin",
+        "ate",
+        "valid",
+        "understood the assignment",
+        "slaps"
+      ],
+      "edges": [
+        [
+          "slay",
+          "based"
+        ],
+        [
+          "based",
+          "bussin"
+        ],
+        [
+          "bussin",
+          "ate"
+        ],
+        [
+          "ate",
+          "valid"
+        ],
+        [
+          "valid",
+          "understood the assignment"
+        ],
+        [
+          "understood the assignment",
+          "slaps"
+        ]
+      ]
+    },
+    {
+      "id": "insult",
+      "label": "Insult",
+      "color": "#FF6B6B",
+      "description": "Terms for calling people out or shaming",
+      "centroid": {
+        "x": -0.348,
+        "y": 0.643
+      },
+      "terms": [
+        "delulu",
+        "mid",
+        "NPC",
+        "simp",
+        "touch grass",
+        "cheugy"
+      ],
+      "edges": [
+        [
+          "delulu",
+          "mid"
+        ],
+        [
+          "mid",
+          "NPC"
+        ],
+        [
+          "NPC",
+          "simp"
+        ],
+        [
+          "simp",
+          "touch grass"
+        ],
+        [
+          "touch grass",
+          "cheugy"
+        ]
+      ]
+    },
+    {
+      "id": "identity",
+      "label": "Identity",
+      "color": "#A78BFA",
+      "description": "Terms defining personality archetypes",
+      "centroid": {
+        "x": 0.263,
+        "y": 0.665
+      },
+      "terms": [
+        "sigma",
+        "main character",
+        "era",
+        "aura",
+        "brat"
+      ],
+      "edges": [
+        [
+          "sigma",
+          "main character"
+        ],
+        [
+          "main character",
+          "era"
+        ],
+        [
+          "era",
+          "aura"
+        ],
+        [
+          "aura",
+          "brat"
+        ]
+      ]
+    },
+    {
+      "id": "humor",
+      "label": "Humor",
+      "color": "#67E8F9",
+      "description": "Absurdist, ironic & meme-based language",
+      "centroid": {
+        "x": 0.319,
+        "y": 0.624
+      },
+      "terms": [
+        "brain rot",
+        "ohio",
+        "fanum tax",
+        "girl math",
+        "very mindful",
+        "Roman Empire"
+      ],
+      "edges": [
+        [
+          "brain rot",
+          "ohio"
+        ],
+        [
+          "ohio",
+          "fanum tax"
+        ],
+        [
+          "fanum tax",
+          "girl math"
+        ],
+        [
+          "girl math",
+          "very mindful"
+        ],
+        [
+          "very mindful",
+          "Roman Empire"
+        ]
+      ]
+    },
+    {
+      "id": "reaction",
+      "label": "Reaction",
+      "color": "#FB923C",
+      "description": "Expressions of surprise or attraction",
+      "centroid": {
+        "x": 0.291,
+        "y": 0.666
+      },
+      "terms": [
+        "cooked",
+        "gyatt",
+        "sheesh"
+      ],
+      "edges": [
+        [
+          "cooked",
+          "gyatt"
+        ],
+        [
+          "gyatt",
+          "sheesh"
+        ]
+      ]
+    },
+    {
+      "id": "appearance",
+      "label": "Appearance",
+      "color": "#F9A8D4",
+      "description": "Terms about looks & physical aesthetics",
+      "centroid": {
+        "x": 0.352,
+        "y": 0.666
+      },
+      "terms": [
+        "snatched",
+        "mewing",
+        "looksmaxxing",
+        "demure"
+      ],
+      "edges": [
+        [
+          "snatched",
+          "mewing"
+        ],
+        [
+          "mewing",
+          "looksmaxxing"
+        ],
+        [
+          "looksmaxxing",
+          "demure"
+        ]
+      ]
+    },
+    {
+      "id": "emotion",
+      "label": "Emotion",
+      "color": "#6EE7B7",
+      "description": "Describing feelings & mental states",
+      "centroid": {
+        "x": 0.166,
+        "y": 0.657
+      },
+      "terms": [
+        "rent free",
+        "hits different"
+      ],
+      "edges": [
+        [
+          "rent free",
+          "hits different"
+        ]
+      ]
+    },
+    {
+      "id": "dating",
+      "label": "Dating",
+      "color": "#FCA5A5",
+      "description": "Relationship flags and dating culture",
+      "centroid": {
+        "x": 0.07,
+        "y": 0.645
+      },
+      "terms": [
+        "ick",
+        "beige flag"
+      ],
+      "edges": [
+        [
+          "ick",
+          "beige flag"
+        ]
+      ]
+    },
+    {
+      "id": "emphasis",
+      "label": "Emphasis",
+      "color": "#93C5FD",
+      "description": "Intensifiers & truth-asserting phrases",
+      "centroid": {
+        "x": 0.255,
+        "y": 0.683
+      },
+      "terms": [
+        "no cap",
+        "periodt"
+      ],
+      "edges": [
+        [
+          "no cap",
+          "periodt"
+        ]
+      ]
+    },
+    {
+      "id": "description",
+      "label": "Description",
+      "color": "#D8B4FE",
+      "description": "Vibe-naming & situational descriptors",
+      "centroid": {
+        "x": 0.193,
+        "y": 0.652
+      },
+      "terms": [
+        "its giving"
+      ],
+      "edges": []
+    },
+    {
+      "id": "exposure",
+      "label": "Exposure",
+      "color": "#FDE68A",
+      "description": "Getting caught or called out publicly",
+      "centroid": {
+        "x": -0.28,
+        "y": 0.64
+      },
+      "terms": [
+        "caught in 4k"
+      ],
+      "edges": []
+    },
+    {
+      "id": "manipulation",
+      "label": "Manipulation",
+      "color": "#EF4444",
+      "description": "Dark patterns & psychological games",
+      "centroid": {
+        "x": -0.447,
+        "y": 0.646
+      },
+      "terms": [
+        "gaslighting"
+      ],
+      "edges": []
+    },
+    {
+      "id": "meme",
+      "label": "Meme",
+      "color": "#4ADE80",
+      "description": "Viral internet absurdism & references",
+      "centroid": {
+        "x": 0.261,
+        "y": 0.648
+      },
+      "terms": [
+        "skibidi"
+      ],
+      "edges": []
+    },
+    {
+      "id": "food",
+      "label": "Food",
+      "color": "#FDBA74",
+      "description": "Food-related slang & eating culture",
+      "centroid": {
+        "x": 0.426,
+        "y": 0.592
+      },
+      "terms": [
+        "girl dinner"
+      ],
+      "edges": []
+    },
+    {
+      "id": "attraction",
+      "label": "Attraction",
+      "color": "#F472B6",
+      "description": "Charisma, rizz & romantic energy",
+      "centroid": {
+        "x": 0.292,
+        "y": 0.649
+      },
+      "terms": [
+        "rizz"
+      ],
+      "edges": []
+    },
+    {
+      "id": "social",
+      "label": "Social",
+      "color": "#818CF8",
+      "description": "Group vibe-checking & energy reads",
+      "centroid": {
+        "x": 0.219,
+        "y": 0.669
+      },
+      "terms": [
+        "vibe check"
+      ],
+      "edges": []
+    },
+    {
+      "id": "behavior",
+      "label": "Behavior",
+      "color": "#86EFAC",
+      "description": "Describing someone's actions or energy",
+      "centroid": {
+        "x": 0.007,
+        "y": 0.678
+      },
+      "terms": [
+        "unhinged",
+        "yapping"
+      ],
+      "edges": [
+        [
+          "unhinged",
+          "yapping"
+        ]
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": "snatched",
+      "category": "appearance",
+      "meaning": "looking really good, on point",
+      "sentiment": 0.346,
+      "intensity": 0.647,
+      "total_usage": 15201,
+      "peak_month": "2023-08",
+      "dominant_phase": "growing",
+      "top_platform": "Instagram",
+      "viral_posts": 15
+    },
+    {
+      "term": "mewing",
+      "category": "appearance",
+      "meaning": "tongue posture for jawline",
+      "sentiment": 0.356,
+      "intensity": 0.69,
+      "total_usage": 10431,
+      "peak_month": "2025-07",
+      "dominant_phase": "growing",
+      "top_platform": "TikTok",
+      "viral_posts": 13
+    },
+    {
+      "term": "looksmaxxing",
+      "category": "appearance",
+      "meaning": "maximizing physical appearance",
+      "sentiment": 0.356,
+      "intensity": 0.726,
+      "total_usage": 9807,
+      "peak_month": "2025-08",
+      "dominant_phase": "growing",
+      "top_platform": "YouTube",
+      "viral_posts": 15
+    },
+    {
+      "term": "demure",
+      "category": "appearance",
+      "meaning": "modest, reserved (often ironic)",
+      "sentiment": 0.349,
+      "intensity": 0.603,
+      "total_usage": 4358,
+      "peak_month": "2024-09",
+      "dominant_phase": "declining",
+      "top_platform": "TikTok",
+      "viral_posts": 7
+    },
+    {
+      "term": "slay",
+      "category": "approval",
+      "meaning": "doing something exceptionally well",
+      "sentiment": 0.457,
+      "intensity": 0.651,
+      "total_usage": 19004,
+      "peak_month": "2023-01",
+      "dominant_phase": "growing",
+      "top_platform": "TikTok",
+      "viral_posts": 26
+    },
+    {
+      "term": "based",
+      "category": "approval",
+      "meaning": "authentic, not caring about opinions",
+      "sentiment": 0.453,
+      "intensity": 0.653,
+      "total_usage": 18541,
+      "peak_month": "2022-10",
+      "dominant_phase": "growing",
+      "top_platform": "Reddit",
+      "viral_posts": 22
+    },
+    {
+      "term": "bussin",
+      "category": "approval",
+      "meaning": "really good, especially food",
+      "sentiment": 0.451,
+      "intensity": 0.653,
+      "total_usage": 17651,
+      "peak_month": "2021-03",
+      "dominant_phase": "growing",
+      "top_platform": "TikTok",
+      "viral_posts": 19
+    },
+    {
+      "term": "ate",
+      "category": "approval",
+      "meaning": "did really well, killed it",
+      "sentiment": 0.457,
+      "intensity": 0.652,
+      "total_usage": 15626,
+      "peak_month": "2022-03",
+      "dominant_phase": "declining",
+      "top_platform": "Twitter",
+      "viral_posts": 21
+    },
+    {
+      "term": "valid",
+      "category": "approval",
+      "meaning": "acceptable, makes sense",
+      "sentiment": 0.454,
+      "intensity": 0.644,
+      "total_usage": 13069,
+      "peak_month": "2022-06",
+      "dominant_phase": "growing",
+      "top_platform": "Twitter",
+      "viral_posts": 18
+    },
+    {
+      "term": "understood the assignment",
+      "category": "approval",
+      "meaning": "did exactly what was needed",
+      "sentiment": 0.451,
+      "intensity": 0.65,
+      "total_usage": 12138,
+      "peak_month": "2021-07",
+      "dominant_phase": "declining",
+      "top_platform": "Twitter",
+      "viral_posts": 14
+    },
+    {
+      "term": "slaps",
+      "category": "approval",
+      "meaning": "really good, especially music",
+      "sentiment": 0.442,
+      "intensity": 0.676,
+      "total_usage": 10872,
+      "peak_month": "2020-01",
+      "dominant_phase": "declining",
+      "top_platform": "Reddit",
+      "viral_posts": 18
+    },
+    {
+      "term": "rizz",
+      "category": "attraction",
+      "meaning": "charisma, ability to attract others",
+      "sentiment": 0.292,
+      "intensity": 0.649,
+      "total_usage": 16782,
+      "peak_month": "2023-05",
+      "dominant_phase": "growing",
+      "top_platform": "TikTok",
+      "viral_posts": 25
+    },
+    {
+      "term": "unhinged",
+      "category": "behavior",
+      "meaning": "wild, chaotic behavior",
+      "sentiment": 0.013,
+      "intensity": 0.647,
+      "total_usage": 12498,
+      "peak_month": "2024-01",
+      "dominant_phase": "declining",
+      "top_platform": "Twitter",
+      "viral_posts": 7
+    },
+    {
+      "term": "yapping",
+      "category": "behavior",
+      "meaning": "talking too much",
+      "sentiment": 0.002,
+      "intensity": 0.709,
+      "total_usage": 11405,
+      "peak_month": "2024-12",
+      "dominant_phase": "growing",
+      "top_platform": "TikTok",
+      "viral_posts": 14
+    },
+    {
+      "term": "ick",
+      "category": "dating",
+      "meaning": "sudden turn-off feeling",
+      "sentiment": 0.071,
+      "intensity": 0.649,
+      "total_usage": 12911,
+      "peak_month": "2023-04",
+      "dominant_phase": "declining",
+      "top_platform": "TikTok",
+      "viral_posts": 28
+    },
+    {
+      "term": "beige flag",
+      "category": "dating",
+      "meaning": "neutral trait, neither good nor bad",
+      "sentiment": 0.069,
+      "intensity": 0.64,
+      "total_usage": 8410,
+      "peak_month": "2023-07",
+      "dominant_phase": "declining",
+      "top_platform": "TikTok",
+      "viral_posts": 7
+    },
+    {
+      "term": "its giving",
+      "category": "description",
+      "meaning": "it has the vibe of",
+      "sentiment": 0.193,
+      "intensity": 0.652,
+      "total_usage": 12961,
+      "peak_month": "2022-04",
+      "dominant_phase": "declining",
+      "top_platform": "TikTok",
+      "viral_posts": 15
+    },
+    {
+      "term": "rent free",
+      "category": "emotion",
+      "meaning": "constantly thinking about something",
+      "sentiment": 0.163,
+      "intensity": 0.653,
+      "total_usage": 14401,
+      "peak_month": "2020-10",
+      "dominant_phase": "declining",
+      "top_platform": "Twitter",
+      "viral_posts": 27
+    },
+    {
+      "term": "hits different",
+      "category": "emotion",
+      "meaning": "affects you in a unique way",
+      "sentiment": 0.169,
+      "intensity": 0.66,
+      "total_usage": 13620,
+      "peak_month": "2020-10",
+      "dominant_phase": "declining",
+      "top_platform": "Twitter",
+      "viral_posts": 20
+    },
+    {
+      "term": "no cap",
+      "category": "emphasis",
+      "meaning": "no lie, for real",
+      "sentiment": 0.253,
+      "intensity": 0.688,
+      "total_usage": 15107,
+      "peak_month": "2020-03",
+      "dominant_phase": "declining",
+      "top_platform": "Twitter",
+      "viral_posts": 17
+    },
+    {
+      "term": "periodt",
+      "category": "emphasis",
+      "meaning": "end of discussion, period",
+      "sentiment": 0.257,
+      "intensity": 0.678,
+      "total_usage": 9040,
+      "peak_month": "2020-05",
+      "dominant_phase": "declining",
+      "top_platform": "Twitter",
+      "viral_posts": 10
+    },
+    {
+      "term": "caught in 4k",
+      "category": "exposure",
+      "meaning": "caught red-handed with evidence",
+      "sentiment": -0.28,
+      "intensity": 0.64,
+      "total_usage": 10596,
+      "peak_month": "2021-10",
+      "dominant_phase": "declining",
+      "top_platform": "Twitter",
+      "viral_posts": 14
+    },
+    {
+      "term": "girl dinner",
+      "category": "food",
+      "meaning": "random snack-based meal",
+      "sentiment": 0.426,
+      "intensity": 0.592,
+      "total_usage": 4219,
+      "peak_month": "2023-07",
+      "dominant_phase": "declining",
+      "top_platform": "TikTok",
+      "viral_posts": 5
+    },
+    {
+      "term": "brain rot",
+      "category": "humor",
+      "meaning": "consuming too much internet content",
+      "sentiment": 0.328,
+      "intensity": 0.678,
+      "total_usage": 14324,
+      "peak_month": "2025-04",
+      "dominant_phase": "growing",
+      "top_platform": "TikTok",
+      "viral_posts": 17
+    },
+    {
+      "term": "ohio",
+      "category": "humor",
+      "meaning": "weird, cursed, absurd",
+      "sentiment": 0.332,
+      "intensity": 0.637,
+      "total_usage": 10912,
+      "peak_month": "2023-10",
+      "dominant_phase": "growing",
+      "top_platform": "TikTok",
+      "viral_posts": 17
+    },
+    {
+      "term": "fanum tax",
+      "category": "humor",
+      "meaning": "taking someone's food",
+      "sentiment": 0.318,
+      "intensity": 0.646,
+      "total_usage": 10235,
+      "peak_month": "2024-04",
+      "dominant_phase": "declining",
+      "top_platform": "Twitch",
+      "viral_posts": 10
+    },
+    {
+      "term": "girl math",
+      "category": "humor",
+      "meaning": "humorous financial justification",
+      "sentiment": 0.312,
+      "intensity": 0.607,
+      "total_usage": 4704,
+      "peak_month": "2023-12",
+      "dominant_phase": "declining",
+      "top_platform": "TikTok",
+      "viral_posts": 7
+    },
+    {
+      "term": "very mindful",
+      "category": "humor",
+      "meaning": "being conscious and considerate",
+      "sentiment": 0.311,
+      "intensity": 0.603,
+      "total_usage": 4286,
+      "peak_month": "2024-08",
+      "dominant_phase": "declining",
+      "top_platform": "TikTok",
+      "viral_posts": 8
+    },
+    {
+      "term": "Roman Empire",
+      "category": "humor",
+      "meaning": "thing someone thinks about obsessively",
+      "sentiment": 0.311,
+      "intensity": 0.575,
+      "total_usage": 3328,
+      "peak_month": "2023-09",
+      "dominant_phase": "declining",
+      "top_platform": "TikTok",
+      "viral_posts": 4
+    },
+    {
+      "term": "sigma",
+      "category": "identity",
+      "meaning": "lone wolf personality type",
+      "sentiment": 0.26,
+      "intensity": 0.687,
+      "total_usage": 15630,
+      "peak_month": "2024-08",
+      "dominant_phase": "growing",
+      "top_platform": "YouTube",
+      "viral_posts": 19
+    },
+    {
+      "term": "main character",
+      "category": "identity",
+      "meaning": "being the protagonist of your life",
+      "sentiment": 0.259,
+      "intensity": 0.649,
+      "total_usage": 14324,
+      "peak_month": "2021-03",
+      "dominant_phase": "declining",
+      "top_platform": "TikTok",
+      "viral_posts": 22
+    },
+    {
+      "term": "era",
+      "category": "identity",
+      "meaning": "current phase of life",
+      "sentiment": 0.26,
+      "intensity": 0.647,
+      "total_usage": 13069,
+      "peak_month": "2024-07",
+      "dominant_phase": "declining",
+      "top_platform": "TikTok",
+      "viral_posts": 16
+    },
+    {
+      "term": "aura",
+      "category": "identity",
+      "meaning": "personal energy/presence points",
+      "sentiment": 0.268,
+      "intensity": 0.726,
+      "total_usage": 9114,
+      "peak_month": "2024-12",
+      "dominant_phase": "growing",
+      "top_platform": "TikTok",
+      "viral_posts": 21
+    },
+    {
+      "term": "brat",
+      "category": "identity",
+      "meaning": "chaotic, messy summer energy",
+      "sentiment": 0.266,
+      "intensity": 0.616,
+      "total_usage": 5712,
+      "peak_month": "2024-09",
+      "dominant_phase": "declining",
+      "top_platform": "TikTok",
+      "viral_posts": 9
+    },
+    {
+      "term": "delulu",
+      "category": "insult",
+      "meaning": "delusional, unrealistic expectations",
+      "sentiment": -0.343,
+      "intensity": 0.65,
+      "total_usage": 15244,
+      "peak_month": "2023-05",
+      "dominant_phase": "declining",
+      "top_platform": "TikTok",
+      "viral_posts": 23
+    },
+    {
+      "term": "mid",
+      "category": "insult",
+      "meaning": "mediocre, nothing special",
+      "sentiment": -0.349,
+      "intensity": 0.651,
+      "total_usage": 14642,
+      "peak_month": "2022-08",
+      "dominant_phase": "declining",
+      "top_platform": "Twitch",
+      "viral_posts": 21
+    },
+    {
+      "term": "NPC",
+      "category": "insult",
+      "meaning": "someone who acts scripted/robotic",
+      "sentiment": -0.351,
+      "intensity": 0.642,
+      "total_usage": 14194,
+      "peak_month": "2023-09",
+      "dominant_phase": "growing",
+      "top_platform": "TikTok",
+      "viral_posts": 18
+    },
+    {
+      "term": "simp",
+      "category": "insult",
+      "meaning": "someone overly devoted to another person",
+      "sentiment": -0.346,
+      "intensity": 0.679,
+      "total_usage": 12090,
+      "peak_month": "2021-01",
+      "dominant_phase": "declining",
+      "top_platform": "Reddit",
+      "viral_posts": 19
+    },
+    {
+      "term": "touch grass",
+      "category": "insult",
+      "meaning": "go outside, take a break from internet",
+      "sentiment": -0.346,
+      "intensity": 0.643,
+      "total_usage": 10757,
+      "peak_month": "2022-10",
+      "dominant_phase": "declining",
+      "top_platform": "Twitter",
+      "viral_posts": 9
+    },
+    {
+      "term": "cheugy",
+      "category": "insult",
+      "meaning": "outdated, trying too hard",
+      "sentiment": -0.355,
+      "intensity": 0.591,
+      "total_usage": 4189,
+      "peak_month": "2021-08",
+      "dominant_phase": "declining",
+      "top_platform": "TikTok",
+      "viral_posts": 6
+    },
+    {
+      "term": "gaslighting",
+      "category": "manipulation",
+      "meaning": "psychological manipulation",
+      "sentiment": -0.447,
+      "intensity": 0.646,
+      "total_usage": 16766,
+      "peak_month": "2023-05",
+      "dominant_phase": "growing",
+      "top_platform": "TikTok",
+      "viral_posts": 22
+    },
+    {
+      "term": "skibidi",
+      "category": "meme",
+      "meaning": "random/absurdist humor reference",
+      "sentiment": 0.261,
+      "intensity": 0.648,
+      "total_usage": 12930,
+      "peak_month": "2024-03",
+      "dominant_phase": "growing",
+      "top_platform": "YouTube",
+      "viral_posts": 14
+    },
+    {
+      "term": "cooked",
+      "category": "reaction",
+      "meaning": "done for, ruined",
+      "sentiment": 0.296,
+      "intensity": 0.722,
+      "total_usage": 11025,
+      "peak_month": "2025-10",
+      "dominant_phase": "growing",
+      "top_platform": "TikTok",
+      "viral_posts": 7
+    },
+    {
+      "term": "gyatt",
+      "category": "reaction",
+      "meaning": "expression of attraction",
+      "sentiment": 0.287,
+      "intensity": 0.642,
+      "total_usage": 10568,
+      "peak_month": "2024-08",
+      "dominant_phase": "declining",
+      "top_platform": "Twitch",
+      "viral_posts": 24
+    },
+    {
+      "term": "sheesh",
+      "category": "reaction",
+      "meaning": "expression of amazement",
+      "sentiment": 0.289,
+      "intensity": 0.635,
+      "total_usage": 8711,
+      "peak_month": "2021-12",
+      "dominant_phase": "growing",
+      "top_platform": "TikTok",
+      "viral_posts": 9
+    },
+    {
+      "term": "vibe check",
+      "category": "social",
+      "meaning": "checking someone's mood/energy",
+      "sentiment": 0.219,
+      "intensity": 0.669,
+      "total_usage": 9994,
+      "peak_month": "2020-05",
+      "dominant_phase": "declining",
+      "top_platform": "TikTok",
+      "viral_posts": 18
+    }
+  ]
+}
