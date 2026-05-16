@@ -66,6 +66,12 @@ function triggerSectionViz(sectionId) {
         case 'vibes':
             if (typeof renderVibeWheel === 'function') renderVibeWheel();
             break;
+        case 'regions':                                                    
+            if (typeof renderRegionalMap === 'function') renderRegionalMap(); 
+            break;
+        case 'explore':                                                             
+            if (typeof renderRegionalExplore === 'function') renderRegionalExplore(); 
+            break; 
     }
 }
 
