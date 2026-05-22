@@ -75,8 +75,13 @@ function triggerSectionViz(sectionId) {
         case 'regions':
             if (typeof renderRegionalMap === 'function') renderRegionalMap();
             break;
+        case 'agegap':
+            if (typeof renderAgeGap === 'function') renderAgeGap();
+            break;
         case 'explore':
             if (typeof renderRegionalExplore === 'function') renderRegionalExplore();
+            if (typeof renderWorldMap === 'function') renderWorldMap();
+            if (typeof renderTermExplorer === 'function') renderTermExplorer();
             break;
     }
 }

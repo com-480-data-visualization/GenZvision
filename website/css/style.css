@@ -197,7 +197,8 @@ body {
 
 /* Story sections fade + rise as they enter the viewport */
 .section-story,
-.section-explore {
+.section-explore,
+.section-conclusion {
     opacity: 0;
     transform: translateY(40px);
     transition:
@@ -206,7 +207,8 @@ body {
 }
 
 .section-story.visible,
-.section-explore.visible {
+.section-explore.visible,
+.section-conclusion.visible {
     opacity: 1;
     transform: translateY(0);
 }
@@ -550,6 +552,10 @@ body {
     position: relative;
 }
 
+.explore-card-world {
+    grid-column: 1 / -1;
+}
+
 .placeholder-viz {
     background: var(--bg-section);
     border: 2px dashed rgba(255, 255, 255, 0.1);
@@ -826,16 +832,175 @@ body {
 
 /* === CHRONICLE / FRESCO === */
 .section-chronicle {
+    display: block !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 4rem 2rem 2rem !important;
     overflow: visible;
 }
 
+.section-chronicle .section-text {
+    position: relative !important;
+    top: auto !important;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    padding: 0 2rem;
+    width: 100%;
+    text-align: center;
+}
+
+.section-chronicle .section-viz {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+}
+
 .fresco-container {
-    min-height: 460px;
+    width: 100%;
     position: relative;
+    min-height: auto;
+    /* Force vertical stacking: SVG on top, legend below */
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    /* No card/box — sits on page background */
+    background: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+}
+
+.fresco-container > svg {
+    display: block;
+    width: 100%;
+    flex-shrink: 0;
+    order: 2;
+}
+
+.fresco-legend {
+    order: 1;
+}
+
+.fresco-container::before {
+    display: none !important;
+}
+
+.fresco-container:hover {
+    border-color: transparent !important;
+    box-shadow: none !important;
 }
 
 .fresco-container svg text {
     user-select: none;
+}
+
+.fresco-legend {
+    display: flex !important;
+    justify-content: center !important;
+    flex-wrap: wrap;
+    gap: 22px;
+    padding: 0 0 14px;
+    width: 100%;
+}
+
+.fresco-legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.fresco-legend-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+/* Card popup */
+.fresco-card {
+    position: absolute;
+    top: 100%;
+    width: 280px;
+    background: rgba(10, 10, 18, 0.92);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 14px;
+    z-index: 100;
+    margin-top: -60px;
+    overflow: visible;
+}
+
+.fresco-card-header {
+    font-family: 'Outfit', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.4);
+    padding-left: 10px;
+    margin-bottom: 12px;
+}
+
+.fresco-card-grid-multi {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto;
+    gap: 4px 14px;
+}
+
+.fresco-card-term {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 7px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.fresco-card-grid-multi .fresco-card-term {
+    border-top: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.fresco-card-term:first-of-type {
+    border-top: none;
+}
+
+.fresco-card-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 4px;
+}
+
+.fresco-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.fresco-card-name {
+    font-family: 'Outfit', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.fresco-card-meaning {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 9px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.fresco-card-stats {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 8px;
+    color: rgba(255, 255, 255, 0.25);
 }
 
 
@@ -843,8 +1008,12 @@ body {
 .cosmos-viz-container {
     min-height: 600px;
     padding: 0.5rem;
-    background: #06060f;
+    background: radial-gradient(ellipse at 30% 20%, rgba(124,58,237,0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 80%, rgba(236,72,153,0.05) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(59,130,246,0.04) 0%, transparent 60%),
+                #030312;
     overflow: hidden;
+    border-radius: 12px;
 }
 
 .cosmos-viz-container svg {
@@ -939,6 +1108,160 @@ body {
     flex-shrink: 0;
 }
 
+/* === SECTION CONNECTORS (narrative transitions) === */
+.section-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 2.5rem 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.section-connector span {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--text-secondary);
+    opacity: 0.7;
+    text-align: center;
+    max-width: 500px;
+    line-height: 1.6;
+}
+
+.connector-arrow {
+    width: 12px;
+    height: 12px;
+    border-right: 2px solid var(--accent-light);
+    border-bottom: 2px solid var(--accent-light);
+    transform: rotate(45deg);
+    opacity: 0.4;
+    animation: connector-bounce 2.5s ease-in-out infinite;
+}
+
+@keyframes connector-bounce {
+    0%, 100% { transform: rotate(45deg) translate(0, 0); opacity: 0.3; }
+    50%      { transform: rotate(45deg) translate(3px, 3px); opacity: 0.6; }
+}
+
+/* === CONCLUSION SECTION === */
+/* === AGE GAP SECTION (stacked layout) === */
+.section-agegap {
+    display: block !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 4rem 2rem 2rem !important;
+    overflow: visible;
+}
+
+.agegap-header {
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.agegap-header .section-title {
+    display: block;
+    text-align: center;
+}
+
+.agegap-header .section-title::after {
+    left: 50%;
+    transform: translateX(-50%) scaleX(1);
+}
+
+.agegap-header .section-intro {
+    text-align: left;
+}
+
+.agegap-viz-container {
+    max-width: 700px;
+    margin: 0 auto;
+    min-height: 480px;
+    display: block !important;
+}
+
+.agegap-viz-container svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.section-conclusion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 70vh;
+    padding: 6rem 2rem;
+    background: radial-gradient(ellipse at 50% 50%, rgba(124, 58, 237, 0.06) 0%, transparent 60%);
+}
+
+.conclusion-content {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.conclusion-content .section-title {
+    display: block;
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.conclusion-content .section-title::after {
+    left: 50%;
+    transform: translateX(-50%) scaleX(1);
+}
+
+.conclusion-grid {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.conclusion-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.conclusion-num {
+    font-family: var(--font-heading);
+    font-size: 2.4rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--accent-light), var(--accent-pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+}
+
+.conclusion-label {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    max-width: 160px;
+    line-height: 1.4;
+}
+
+.conclusion-text {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.9;
+    margin-bottom: 2rem;
+}
+
+.conclusion-credit {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.25);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
 /* === RESPONSIVE === */
 @media (max-width: 900px) {
     .section-story {
@@ -956,5 +1279,13 @@ body {
 
     .nav-links {
         display: none;
+    }
+
+    .conclusion-grid {
+        gap: 1.5rem;
+    }
+
+    .section-connector span {
+        font-size: 0.9rem;
     }
 }

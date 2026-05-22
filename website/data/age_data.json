@@ -1,0 +1,494 @@
+{
+  "age_groups": [
+    "13-17",
+    "18-24",
+    "25-30",
+    "31-40",
+    "41+"
+  ],
+  "overall": {
+    "counts": {
+      "13-17": 78930,
+      "18-24": 97468,
+      "25-30": 64535,
+      "31-40": 38913,
+      "41+": 23240
+    },
+    "pcts": {
+      "13-17": 26.0,
+      "18-24": 32.2,
+      "25-30": 21.3,
+      "31-40": 12.8,
+      "41+": 7.7
+    }
+  },
+  "profiles": {
+    "teen_heavy": "Dominated by 13-17 year olds",
+    "core_genz": "Core Gen Z (18-24 peak)",
+    "young_adult": "Young adult crossover",
+    "wide": "Multi-generational adoption",
+    "older_skew": "Millennial-leaning"
+  },
+  "terms": [
+    {
+      "term": "slay",
+      "total_usage": 19004,
+      "category": "approval",
+      "meaning": "doing something exceptionally well",
+      "profile": "core_genz",
+      "age_counts": {
+        "13-17": 5812,
+        "18-24": 6828,
+        "25-30": 3633,
+        "31-40": 1355,
+        "41+": 1376
+      },
+      "age_pcts": {
+        "13-17": 30.6,
+        "18-24": 35.9,
+        "25-30": 19.1,
+        "31-40": 7.1,
+        "41+": 7.2
+      },
+      "dominant_age": "18-24",
+      "avg_sentiment": 0.457
+    },
+    {
+      "term": "based",
+      "total_usage": 18541,
+      "category": "approval",
+      "meaning": "authentic, not caring about opinions",
+      "profile": "core_genz",
+      "age_counts": {
+        "13-17": 5586,
+        "18-24": 7813,
+        "25-30": 3171,
+        "31-40": 1591,
+        "41+": 380
+      },
+      "age_pcts": {
+        "13-17": 30.1,
+        "18-24": 42.1,
+        "25-30": 17.1,
+        "31-40": 8.6,
+        "41+": 2.0
+      },
+      "dominant_age": "18-24",
+      "avg_sentiment": 0.453
+    },
+    {
+      "term": "bussin",
+      "total_usage": 17651,
+      "category": "approval",
+      "meaning": "really good, especially food",
+      "profile": "core_genz",
+      "age_counts": {
+        "13-17": 4898,
+        "18-24": 7236,
+        "25-30": 3084,
+        "31-40": 1254,
+        "41+": 1179
+      },
+      "age_pcts": {
+        "13-17": 27.7,
+        "18-24": 41.0,
+        "25-30": 17.5,
+        "31-40": 7.1,
+        "41+": 6.7
+      },
+      "dominant_age": "18-24",
+      "avg_sentiment": 0.451
+    },
+    {
+      "term": "rizz",
+      "total_usage": 16782,
+      "category": "attraction",
+      "meaning": "charisma, ability to attract others",
+      "profile": "teen_heavy",
+      "age_counts": {
+        "13-17": 7231,
+        "18-24": 4740,
+        "25-30": 2682,
+        "31-40": 1788,
+        "41+": 341
+      },
+      "age_pcts": {
+        "13-17": 43.1,
+        "18-24": 28.2,
+        "25-30": 16.0,
+        "31-40": 10.7,
+        "41+": 2.0
+      },
+      "dominant_age": "13-17",
+      "avg_sentiment": 0.292
+    },
+    {
+      "term": "gaslighting",
+      "total_usage": 16766,
+      "category": "manipulation",
+      "meaning": "psychological manipulation",
+      "profile": "wide",
+      "age_counts": {
+        "13-17": 2822,
+        "18-24": 4786,
+        "25-30": 3675,
+        "31-40": 2627,
+        "41+": 2856
+      },
+      "age_pcts": {
+        "13-17": 16.8,
+        "18-24": 28.5,
+        "25-30": 21.9,
+        "31-40": 15.7,
+        "41+": 17.0
+      },
+      "dominant_age": "18-24",
+      "avg_sentiment": -0.447
+    },
+    {
+      "term": "sigma",
+      "total_usage": 15630,
+      "category": "identity",
+      "meaning": "lone wolf personality type",
+      "profile": "teen_heavy",
+      "age_counts": {
+        "13-17": 6638,
+        "18-24": 4362,
+        "25-30": 1921,
+        "31-40": 1758,
+        "41+": 951
+      },
+      "age_pcts": {
+        "13-17": 42.5,
+        "18-24": 27.9,
+        "25-30": 12.3,
+        "31-40": 11.2,
+        "41+": 6.1
+      },
+      "dominant_age": "13-17",
+      "avg_sentiment": 0.26
+    },
+    {
+      "term": "ate",
+      "total_usage": 15626,
+      "category": "approval",
+      "meaning": "did really well, killed it",
+      "profile": "core_genz",
+      "age_counts": {
+        "13-17": 4431,
+        "18-24": 5797,
+        "25-30": 2952,
+        "31-40": 1860,
+        "41+": 586
+      },
+      "age_pcts": {
+        "13-17": 28.4,
+        "18-24": 37.1,
+        "25-30": 18.9,
+        "31-40": 11.9,
+        "41+": 3.8
+      },
+      "dominant_age": "18-24",
+      "avg_sentiment": 0.457
+    },
+    {
+      "term": "delulu",
+      "total_usage": 15244,
+      "category": "insult",
+      "meaning": "delusional, unrealistic expectations",
+      "profile": "young_adult",
+      "age_counts": {
+        "13-17": 2611,
+        "18-24": 4911,
+        "25-30": 3963,
+        "31-40": 2395,
+        "41+": 1364
+      },
+      "age_pcts": {
+        "13-17": 17.1,
+        "18-24": 32.2,
+        "25-30": 26.0,
+        "31-40": 15.7,
+        "41+": 8.9
+      },
+      "dominant_age": "18-24",
+      "avg_sentiment": -0.343
+    },
+    {
+      "term": "snatched",
+      "total_usage": 15201,
+      "category": "appearance",
+      "meaning": "looking really good, on point",
+      "profile": "young_adult",
+      "age_counts": {
+        "13-17": 3288,
+        "18-24": 4750,
+        "25-30": 4157,
+        "31-40": 2062,
+        "41+": 944
+      },
+      "age_pcts": {
+        "13-17": 21.6,
+        "18-24": 31.2,
+        "25-30": 27.3,
+        "31-40": 13.6,
+        "41+": 6.2
+      },
+      "dominant_age": "18-24",
+      "avg_sentiment": 0.346
+    },
+    {
+      "term": "no cap",
+      "total_usage": 15107,
+      "category": "emphasis",
+      "meaning": "no lie, for real",
+      "profile": "core_genz",
+      "age_counts": {
+        "13-17": 4206,
+        "18-24": 5660,
+        "25-30": 2964,
+        "31-40": 1640,
+        "41+": 637
+      },
+      "age_pcts": {
+        "13-17": 27.8,
+        "18-24": 37.5,
+        "25-30": 19.6,
+        "31-40": 10.9,
+        "41+": 4.2
+      },
+      "dominant_age": "18-24",
+      "avg_sentiment": 0.253
+    },
+    {
+      "term": "mid",
+      "total_usage": 14642,
+      "category": "insult",
+      "meaning": "mediocre, nothing special",
+      "profile": "older_skew",
+      "age_counts": {
+        "13-17": 1319,
+        "18-24": 2897,
+        "25-30": 3848,
+        "31-40": 4048,
+        "41+": 2530
+      },
+      "age_pcts": {
+        "13-17": 9.0,
+        "18-24": 19.8,
+        "25-30": 26.3,
+        "31-40": 27.6,
+        "41+": 17.3
+      },
+      "dominant_age": "31-40",
+      "avg_sentiment": -0.349
+    },
+    {
+      "term": "rent free",
+      "total_usage": 14401,
+      "category": "emotion",
+      "meaning": "constantly thinking about something",
+      "profile": "older_skew",
+      "age_counts": {
+        "13-17": 1624,
+        "18-24": 2893,
+        "25-30": 4456,
+        "31-40": 3182,
+        "41+": 2246
+      },
+      "age_pcts": {
+        "13-17": 11.3,
+        "18-24": 20.1,
+        "25-30": 30.9,
+        "31-40": 22.1,
+        "41+": 15.6
+      },
+      "dominant_age": "25-30",
+      "avg_sentiment": 0.163
+    },
+    {
+      "term": "brain rot",
+      "total_usage": 14324,
+      "category": "humor",
+      "meaning": "consuming too much internet content",
+      "profile": "teen_heavy",
+      "age_counts": {
+        "13-17": 5995,
+        "18-24": 4063,
+        "25-30": 2018,
+        "31-40": 1237,
+        "41+": 1011
+      },
+      "age_pcts": {
+        "13-17": 41.9,
+        "18-24": 28.4,
+        "25-30": 14.1,
+        "31-40": 8.6,
+        "41+": 7.1
+      },
+      "dominant_age": "13-17",
+      "avg_sentiment": 0.328
+    },
+    {
+      "term": "main character",
+      "total_usage": 14324,
+      "category": "identity",
+      "meaning": "being the protagonist of your life",
+      "profile": "young_adult",
+      "age_counts": {
+        "13-17": 3114,
+        "18-24": 4597,
+        "25-30": 3583,
+        "31-40": 1930,
+        "41+": 1100
+      },
+      "age_pcts": {
+        "13-17": 21.7,
+        "18-24": 32.1,
+        "25-30": 25.0,
+        "31-40": 13.5,
+        "41+": 7.7
+      },
+      "dominant_age": "18-24",
+      "avg_sentiment": 0.259
+    },
+    {
+      "term": "NPC",
+      "total_usage": 14194,
+      "category": "insult",
+      "meaning": "someone who acts scripted/robotic",
+      "profile": "teen_heavy",
+      "age_counts": {
+        "13-17": 5416,
+        "18-24": 4579,
+        "25-30": 2458,
+        "31-40": 889,
+        "41+": 852
+      },
+      "age_pcts": {
+        "13-17": 38.2,
+        "18-24": 32.3,
+        "25-30": 17.3,
+        "31-40": 6.3,
+        "41+": 6.0
+      },
+      "dominant_age": "13-17",
+      "avg_sentiment": -0.351
+    },
+    {
+      "term": "hits different",
+      "total_usage": 13620,
+      "category": "emotion",
+      "meaning": "affects you in a unique way",
+      "profile": "older_skew",
+      "age_counts": {
+        "13-17": 1271,
+        "18-24": 3510,
+        "25-30": 3836,
+        "31-40": 3066,
+        "41+": 1937
+      },
+      "age_pcts": {
+        "13-17": 9.3,
+        "18-24": 25.8,
+        "25-30": 28.2,
+        "31-40": 22.5,
+        "41+": 14.2
+      },
+      "dominant_age": "25-30",
+      "avg_sentiment": 0.169
+    },
+    {
+      "term": "valid",
+      "total_usage": 13069,
+      "category": "approval",
+      "meaning": "acceptable, makes sense",
+      "profile": "core_genz",
+      "age_counts": {
+        "13-17": 3663,
+        "18-24": 4643,
+        "25-30": 2658,
+        "31-40": 1566,
+        "41+": 539
+      },
+      "age_pcts": {
+        "13-17": 28.0,
+        "18-24": 35.5,
+        "25-30": 20.3,
+        "31-40": 12.0,
+        "41+": 4.1
+      },
+      "dominant_age": "18-24",
+      "avg_sentiment": 0.454
+    },
+    {
+      "term": "era",
+      "total_usage": 13069,
+      "category": "identity",
+      "meaning": "current phase of life",
+      "profile": "young_adult",
+      "age_counts": {
+        "13-17": 2169,
+        "18-24": 4955,
+        "25-30": 3728,
+        "31-40": 1477,
+        "41+": 740
+      },
+      "age_pcts": {
+        "13-17": 16.6,
+        "18-24": 37.9,
+        "25-30": 28.5,
+        "31-40": 11.3,
+        "41+": 5.7
+      },
+      "dominant_age": "18-24",
+      "avg_sentiment": 0.26
+    },
+    {
+      "term": "its giving",
+      "total_usage": 12961,
+      "category": "description",
+      "meaning": "it has the vibe of",
+      "profile": "young_adult",
+      "age_counts": {
+        "13-17": 2006,
+        "18-24": 4452,
+        "25-30": 3956,
+        "31-40": 1804,
+        "41+": 743
+      },
+      "age_pcts": {
+        "13-17": 15.5,
+        "18-24": 34.3,
+        "25-30": 30.5,
+        "31-40": 13.9,
+        "41+": 5.7
+      },
+      "dominant_age": "18-24",
+      "avg_sentiment": 0.193
+    },
+    {
+      "term": "skibidi",
+      "total_usage": 12930,
+      "category": "meme",
+      "meaning": "random/absurdist humor reference",
+      "profile": "teen_heavy",
+      "age_counts": {
+        "13-17": 4830,
+        "18-24": 3996,
+        "25-30": 1792,
+        "31-40": 1384,
+        "41+": 928
+      },
+      "age_pcts": {
+        "13-17": 37.4,
+        "18-24": 30.9,
+        "25-30": 13.9,
+        "31-40": 10.7,
+        "41+": 7.2
+      },
+      "dominant_age": "13-17",
+      "avg_sentiment": 0.261
+    }
+  ]
+}
