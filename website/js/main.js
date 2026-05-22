@@ -66,6 +66,9 @@ function triggerSectionViz(sectionId) {
         case 'vibes':
             if (typeof renderVibeWheel === 'function') renderVibeWheel();
             break;
+        case 'chronicle':
+            if (typeof renderFresco === 'function') renderFresco();
+            break;
     }
 }
 

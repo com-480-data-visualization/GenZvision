@@ -824,6 +824,20 @@ body {
     letter-spacing: 0.3px;
 }
 
+/* === CHRONICLE / FRESCO === */
+.section-chronicle {
+    overflow: visible;
+}
+
+.fresco-container {
+    min-height: 460px;
+    position: relative;
+}
+
+.fresco-container svg text {
+    user-select: none;
+}
+
 /* === RESPONSIVE === */
 @media (max-width: 900px) {
     .section-story {
