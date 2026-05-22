@@ -838,6 +838,107 @@ body {
     user-select: none;
 }
 
+
+/* === COSMOS === */
+.cosmos-viz-container {
+    min-height: 600px;
+    padding: 0.5rem;
+    background: #06060f;
+    overflow: hidden;
+}
+
+.cosmos-viz-container svg {
+    overflow: visible;
+    filter: drop-shadow(0 0 60px rgba(124, 58, 237, 0.1));
+}
+
+.cosmos-legend-panel {
+    margin-top: 1.5rem;
+}
+
+.cosmos-legend-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: rgba(255, 255, 255, 0.25);
+    margin-bottom: 0.6rem;
+    text-transform: uppercase;
+}
+
+.cosmos-clear-btn {
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+    color: var(--accent-light);
+    font-size: 0.72rem;
+    font-family: var(--font-body);
+    padding: 0.15rem 0.5rem;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.cosmos-clear-btn:hover {
+    background: rgba(167, 139, 250, 0.12);
+    border-color: var(--accent-light);
+}
+
+.cosmos-legend-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.25rem 0.6rem;
+}
+
+.cosmos-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 0.25rem 0.4rem;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    transition: background 0.2s ease, color 0.2s ease,
+                opacity 0.3s ease, border-color 0.2s ease;
+    user-select: none;
+}
+
+.cosmos-legend-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+}
+
+.cosmos-legend-item.selected {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.12);
+    color: var(--text-primary);
+}
+
+.cosmos-legend-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    transition: box-shadow 0.25s ease;
+}
+
+.cosmos-legend-name {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cosmos-legend-count {
+    font-size: 0.68rem;
+    opacity: 0.4;
+    font-variant-numeric: tabular-nums;
+    flex-shrink: 0;
+}
+
 /* === RESPONSIVE === */
 @media (max-width: 900px) {
     .section-story {
