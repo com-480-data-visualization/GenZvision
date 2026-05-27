@@ -1057,6 +1057,17 @@ body {
     margin-top: 1.5rem;
 }
 
+.cosmos-legend-full {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    margin-top: 0;
+}
+
+#cosmos .section-text {
+    position: relative;
+    top: auto;
+}
+
 .cosmos-legend-header {
     display: flex;
     justify-content: space-between;
