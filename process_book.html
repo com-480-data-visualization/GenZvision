@@ -411,6 +411,28 @@
         .feat-card.with-img .feat-img-label {
             display: none;
         }
+        .feat-card.with-img .feat-img-removed {
+            position: absolute;
+            top: 6px;
+            right: 6px;
+            background: linear-gradient(135deg, #dc2626, #ef4444);
+            color: #fff;
+            font-size: 7.5pt;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            padding: 3px 9px;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            box-shadow: 0 2px 6px rgba(220, 38, 38, 0.5);
+            text-transform: uppercase;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+            z-index: 2;
+        }
+        .feat-card.with-img.is-removed .feat-img img {
+            opacity: 0.55;
+            filter: grayscale(0.3);
+        }
         .feat-card.with-img .feat-body {
             padding: 7px 10px 8px;
         }
@@ -733,17 +755,17 @@
 <!-- 3. VISUALIZATIONS NOT IN ORIGINAL PLAN -->
 <div class="section-kicker">New charts beyond the M2 plan</div>
 <h2>3. Visualizations Added Beyond M2</h2>
-<p>Several visualizations were not in the M2 plan. They came from questions that naturally arose as we built the story, and each one was deliberately chosen to answer a question the existing 6 charts could not. The Vibe Wheel exists because none of our M2 charts told us in which real-world <em>contexts</em> (gaming, dating, food reviews&hellip;) a term actually shows up &mdash; a radial layout was the most natural way to compare 17 contexts at a glance without horizontal scrolling. The Chronicle came directly from M2 feedback (our TA pointed out we were ignoring the "first appearance" information in the data), and we picked a horizontal timeline rather than a bar chart because birth dates are inherently positional, not magnitudinal. The Generation Gap uses an animated donut with orbiting particles instead of a grouped bar chart because the particles communicate <em>distribution</em> as a living population rather than abstract percentages, which fits a topic about people. The World Map extends the US Map's click-to-explore pattern to global regions for consistency. Finally, the Term Explorer closes the Shneiderman mantra (overview &rarr; zoom &rarr; details on demand) that none of our other charts truly delivered on their own.</p>
+<p>Several visualizations were not in the M2 plan. They came from questions that naturally arose as we built the story, and each one was deliberately chosen to answer a question the existing 6 charts could not. We prototyped 5 of them, but in the end only 3 (the Chronicle, the Generation Gap, and the Term Explorer) made it into the final site, the Vibe Wheel and the World Map were cut during polishing because they did not earn their place next to the rest of the story. The Vibe Wheel exists because none of our M2 charts told us in which real-world <em>contexts</em> (gaming, dating, food reviews&hellip;) a term actually shows up &mdash; a radial layout was the most natural way to compare 17 contexts at a glance without horizontal scrolling. The Chronicle came directly from M2 feedback (our TA pointed out we were ignoring the "first appearance" information in the data), and we picked a horizontal timeline rather than a bar chart because birth dates are inherently positional, not magnitudinal. The Generation Gap uses an animated donut with orbiting particles instead of a grouped bar chart because the particles communicate <em>distribution</em> as a living population rather than abstract percentages, which fits a topic about people. The World Map extends the US Map's click-to-explore pattern to global regions for consistency. Finally, the Term Explorer closes the Shneiderman mantra (overview &rarr; zoom &rarr; details on demand) that none of our other charts truly delivered on their own.</p>
 
 <div class="feat-grid">
-    <div class="feat-card with-img">
+    <div class="feat-card with-img is-removed">
         <div class="feat-img" style="position:relative">
-            <div class="feat-img-label">Final</div>
+            <div class="feat-img-removed">Removed from final</div>
             <img src="data/finals/vibewheel.svg" alt="Vibe Wheel final">
         </div>
         <div class="feat-body">
             <div class="feat-card-title"><span class="num">07</span> The Vibes (Vibe Wheel)</div>
-            <p>A radial chart with 17 context slices (gaming, dating, memes, food reviews...) showing which terms dominate each context. Inner rings encode sentiment, outer rings encode age. This replaced the ridgeline plot from M2's stretch goals, the wheel packs more dimensions into a single view and is more visually distinct. We wanted something colourful and meaningful and original at the same time.</p>
+            <p>A radial chart with 17 context slices (gaming, dating, memes, food reviews...) showing which terms dominate each context. Inner rings encode sentiment, outer rings encode age. This replaced the ridgeline plot from M2's stretch goals, the wheel packs more dimensions into a single view and is more visually distinct. We wanted something colourful and meaningful and original at the same time. <em>Note: we prototyped this viz and it worked, but we eventually removed it from the final site to keep the story focused. The site already had ten visualizations and the Vibe Wheel, while pretty, did not pull its narrative weight compared to the others, so we cut it.</em></p>
         </div>
     </div>
     <div class="feat-card with-img">
@@ -766,14 +788,14 @@
             <p>It is an animated donut chart with 200 orbiting particles showing age group distributions per term. A dropdown lets you switch terms, the arcs morph smoothly (custom attrTween) and particles redistribute by color. For example, selecting "rizz" shows around 43% teen (13-17) usage; "gaslighting" is spread fairly evenly across all five age groups (17% / 28% / 22% / 16% / 17%).</p>
         </div>
     </div>
-    <div class="feat-card with-img">
+    <div class="feat-card with-img is-removed">
         <div class="feat-img" style="position:relative">
-            <div class="feat-img-label">Final</div>
+            <div class="feat-img-removed">Removed from final</div>
             <img src="data/finals/worldmap.svg" alt="World Map final">
         </div>
         <div class="feat-body">
             <div class="feat-card-title"><span class="num">10</span> World Map (Global Adoption)</div>
-            <p>It is a world choropleth (NaturalEarth1 projection) showing how slang adoption varies across the 22 global regions in the dataset. Same click-to-explore pattern as the US Regional Map: clicking a country opens a side panel with that region's top terms, dominant platform, total usage, and average sentiment. This complements the US-only Regional Map by giving an international perspective.</p>
+            <p>It is a world choropleth (NaturalEarth1 projection) showing how slang adoption varies across the 22 global regions in the dataset. Same click-to-explore pattern as the US Regional Map: clicking a country opens a side panel with that region's top terms, dominant platform, total usage, and average sentiment. This complements the US-only Regional Map by giving an international perspective. <em>Note: we built this viz, but in the end we removed it from the final site because it duplicated the US Regional Map without adding meaningfully new insight, the click-to-explore behaviour was eventually merged directly into the US map itself.</em></p>
         </div>
     </div>
     <div class="feat-card with-img feat-card-full">
@@ -843,6 +865,11 @@
 </div>
 
 <div class="feat-card feat-card-fullwidth">
+    <div class="feat-card-title">Too Many Visualizations, Had to Cut</div>
+    <p>By the end of M3 we had built 11 working visualizations, and the site started to feel overwhelming. Too much information actually weakened the narrative: readers were losing the thread of the story under the weight of so many charts in a row, and certain sections felt redundant. So we made the hard call to remove two visualizations that, despite being technically working and visually appealing, did not earn their place in the final flow: the <strong>Vibe Wheel</strong> (pretty but did not advance the story beyond what the other charts already showed) and the <strong>World Map</strong> (duplicated insights already present in the US Regional Map). Cutting work that took real effort to build was painful, but the final site is leaner and the story is sharper because of it. We kept both vizs documented in section 3 of this process book, with a "Removed from final" badge on their screenshots, because they were a real part of the journey even if they did not make the cut. Knowing what to leave out turned out to be just as important as knowing what to include.</p>
+</div>
+
+<div class="feat-card feat-card-fullwidth">
     <div class="feat-card-title">Choosing Colors</div>
     <p>Picking colors was harder than expected, both for the choropleth maps (US and World) and for the platform-coded visualizations. For the maps, we went through several palette iterations before settling on a monochrome purple gradient (#b8a9d4 &rarr; #7c3aed) with a 0.65 power curve, because same-hue gradients varying only in lightness are far more readable than gradients that mix hues. For the platforms, we initially tried to stay close to each network's official brand color so that the user could recognize them instantly. The problem was that the original brand palettes are visually very close to each other: YouTube red looked almost identical to Reddit red-orange, Instagram pink-magenta was indistinguishable from TikTok red-pink, and Discord blurple blurred into Twitch purple. The issue was especially visible on the Chronicle timeline, where the dots are quite small and subtle color differences become impossible to read. We ended up shifting each color away from its brand default to push them further apart on the color wheel, while still keeping enough of the original hue so that the platform stays recognizable.</p>
 </div>
@@ -865,7 +892,7 @@
         <div class="peer-role-badge">Vizs &amp; process book</div>
         <div class="peer-section">
             <span class="peer-section-label">Visualizations</span>
-            Timeline Heatmap (The Rise), Animated Bubble Chart (Peak &amp; Decline), Generation Gap (donut + particles), and the Vibe Wheel (The Vibes).
+            Timeline Heatmap (The Rise), Animated Bubble Chart (Peak &amp; Decline), and the Generation Gap (donut + particles).
         </div>
         <div class="peer-divider"></div>
         <div class="peer-section">
@@ -905,7 +932,7 @@
         <div class="peer-role-badge">Maps &amp; screencast</div>
         <div class="peer-section">
             <span class="peer-section-label">Visualizations</span>
-            US Regional Map (The Map) and World Map (Global Adoption), including the click-to-explore side panels on both.
+            US Regional Map (The Map), including the click-to-explore side panel showing per-state top terms and sentiment breakdown.
         </div>
         <div class="peer-divider"></div>
         <div class="peer-section">
@@ -942,7 +969,7 @@
 <!-- 7. CONCLUSION -->
 <div class="section-kicker">Wrapping it up</div>
 <h2>7. Conclusion</h2>
-<p>GenZvision went from 6 hand-drawn sketches on paper to 11 interactive D3.js visualizations woven into a single scrollytelling story. We delivered every one of the 6 visualizations we had sketched at Milestone 2, then added 5 more sections that grew organically as we kept asking new questions of the data: the Vibe Wheel, the Chronicle, the Generation Gap, the World Map, and the Term Explorer. Together they tell, we believe, a coherent story of how Gen Z slang is born, spreads, peaks, and fades on the internet.</p>
+<p>GenZvision went from 6 hand-drawn sketches on paper to 11 interactive D3.js visualizations we prototyped, of which 9 made it into the final scrollytelling site. We delivered every one of the 6 visualizations we had sketched at Milestone 2, then added 5 more (the Vibe Wheel, the Chronicle, the Generation Gap, the World Map, and the Term Explorer) that grew organically as we kept asking new questions of the data. Two of those, the Vibe Wheel and the World Map, were eventually pulled from the final site because they did not pull their narrative weight or duplicated existing views. We kept them documented in this process book because they were a real part of the journey, but the final story is leaner on purpose: 9 visualizations, each earning its place. Together they tell, we believe, a coherent story of how Gen Z slang is born, spreads, peaks, and fades on the internet.</p>
 
 <p>Beyond the deliverables, what we will keep from this project is how enjoyable and instructive the whole process was. Picking a dataset we actually found fun changed everything: every obstacle we ran into felt worth the effort because the topic itself kept us curious. We learned a lot along the way, not only the technical D3 side (scales, transitions, force layouts, geographic projections, lazy rendering, interaction patterns), but also the softer skills that matter just as much: visual taste, narrative pacing, knowing when to cut something we liked because it didn't serve the story, and the discipline of iterating on a chart ten times until it finally felt right.</p>
 

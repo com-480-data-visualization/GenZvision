@@ -33,10 +33,13 @@ document.querySelectorAll('.section').forEach(section => {
 // Make hero visible immediately
 document.getElementById('hero').classList.add('visible');
 
-// === Navigation active state ===
+// === Navigation active state (nav links + chapter rail dots) ===
 function updateActiveNav(sectionId) {
     document.querySelectorAll('.nav-link').forEach(link => {
         link.classList.toggle('active', link.dataset.section === sectionId);
+    });
+    document.querySelectorAll('.chapter-dot').forEach(dot => {
+        dot.classList.toggle('active', dot.dataset.section === sectionId);
     });
 }
 
@@ -63,9 +66,6 @@ function triggerSectionViz(sectionId) {
         case 'lifecycle':
             if (typeof renderBubbles === 'function') renderBubbles();
             break;
-        case 'vibes':
-            if (typeof renderVibeWheel === 'function') renderVibeWheel();
-            break;
         case 'chronicle':
             if (typeof renderFresco === 'function') renderFresco();
             break;
@@ -79,8 +79,6 @@ function triggerSectionViz(sectionId) {
             if (typeof renderAgeGap === 'function') renderAgeGap();
             break;
         case 'explore':
-            if (typeof renderRegionalExplore === 'function') renderRegionalExplore();
-            if (typeof renderWorldMap === 'function') renderWorldMap();
             if (typeof renderTermExplorer === 'function') renderTermExplorer();
             break;
     }
@@ -150,16 +148,42 @@ function renderHeroViz() {
 // Trigger hero immediately
 renderHeroViz();
 
-// === Scroll progress bar ===
+// === Scroll progress bar + nav compaction + subtle orb parallax ===
 const progressBar = document.getElementById('scroll-progress');
-function updateProgress() {
+const navEl = document.getElementById('nav');
+const orbEls = document.querySelectorAll('.bg-orb');
+let lastScrollY = 0;
+let ticking = false;
+
+function applyScrollEffects() {
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
     const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     const pct = height > 0 ? (scrollTop / height) * 100 : 0;
     if (progressBar) progressBar.style.width = pct + '%';
+
+    // Compact nav after scrolling past 40px
+    if (navEl) {
+        if (scrollTop > 40) navEl.classList.add('scrolled');
+        else navEl.classList.remove('scrolled');
+    }
+
+    // Very subtle parallax on background orbs (decorative; no functional impact)
+    orbEls.forEach((orb, i) => {
+        const speed = (i + 1) * 0.04;
+        orb.style.translate = `0 ${scrollTop * speed * -0.3}px`;
+    });
+
+    ticking = false;
+}
+
+function updateProgress() {
+    if (!ticking) {
+        requestAnimationFrame(applyScrollEffects);
+        ticking = true;
+    }
 }
 window.addEventListener('scroll', updateProgress, { passive: true });
-updateProgress();
+applyScrollEffects();
 
 // === Animated number counters in hero ===
 function animateCounter(el) {

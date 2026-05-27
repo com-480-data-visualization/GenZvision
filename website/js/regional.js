@@ -17,6 +17,10 @@ function renderRegionalMap() {
     const container = document.getElementById('regional-map-viz');
     container.innerHTML = '';
 
+    // Remove old detail panel if present from a previous render (no longer used — info is in the hover tooltip)
+    const oldPanel = document.getElementById('regions-detail-panel');
+    if (oldPanel) oldPanel.remove();
+
     const margin = { top: 20, right: 40, bottom: 40, left: 80 };
     const totalWidth  = container.getBoundingClientRect().width || 800;
     const totalHeight = 520;
@@ -78,6 +82,7 @@ function renderRegionalMap() {
         return d3.json('https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json');
     }).then(us => {
         const features = topojson.feature(us, us.objects.states).features;
+        let selectedState = null;
 
         // ── State fills ───────────────────────────────────────────────────────
         svg.selectAll('.state')
@@ -97,24 +102,63 @@ function renderRegionalMap() {
                 const record = lookup.get(d.properties.name);
                 if (!record) return;
                 d3.select(this).attr('stroke', '#fff').attr('stroke-width', 1.8);
+
+                // Build a rich tooltip with sentiment breakdown + top terms
+                const s = record.sentiment || {};
+                const pctPos = s.pct_positive != null ? s.pct_positive.toFixed(0) : '—';
+                const pctNeu = s.pct_neutral  != null ? s.pct_neutral.toFixed(0)  : '—';
+                const pctNeg = s.pct_negative != null ? s.pct_negative.toFixed(0) : '—';
+                const top5 = (record.top_terms || []).slice(0, 5).map(t => {
+                    const sentColor = t.avg_sentiment > 0.15 ? '#2ecc71'
+                                    : t.avg_sentiment < -0.15 ? '#e74c3c'
+                                    : '#f1c40f';
+                    return `<div style="display:flex;justify-content:space-between;gap:10px;font-size:11px;line-height:1.6;">
+                        <span><span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:${sentColor};margin-right:5px;vertical-align:middle"></span>${t.slang_term}</span>
+                        <span style="color:rgba(255,255,255,0.5);font-variant-numeric:tabular-nums">${t.count.toLocaleString()}</span>
+                    </div>`;
+                }).join('');
+
                 tooltip
                     .style('display', 'block').style('opacity', 1)
+                    .style('max-width', '260px')
                     .html(`
-                        <strong style="color:#a78bfa">${d.properties.name}</strong><br>
-                        Usage: ${record.total_usage.toLocaleString()}<br>
-                        Top term: <em>${record.top_term}</em><br>
-                        Avg sentiment: ${record.avg_sentiment.toFixed(3)}<br>
-                        Platform: ${record.top_platform}
+                        <div style="margin-bottom:6px">
+                            <strong style="color:#a78bfa;font-size:14px">${d.properties.name}</strong>
+                            <span style="color:rgba(255,255,255,0.45);font-size:10px;margin-left:6px">${record.total_usage.toLocaleString()} uses · ${record.unique_terms} terms</span>
+                        </div>
+                        <div style="font-size:10.5px;color:rgba(255,255,255,0.55);margin-bottom:6px">
+                            Top platform: <strong style="color:#fff">${record.top_platform}</strong> &nbsp;·&nbsp; Avg sentiment: <strong style="color:#fff">${record.avg_sentiment.toFixed(2)}</strong>
+                        </div>
+                        <div style="font-size:9.5px;color:rgba(255,255,255,0.4);letter-spacing:0.8px;text-transform:uppercase;margin-bottom:3px">Sentiment breakdown</div>
+                        <div style="display:flex;height:8px;border-radius:4px;overflow:hidden;background:rgba(255,255,255,0.06);margin-bottom:3px">
+                            <div style="background:#2ecc71;width:${pctPos}%" title="Positive ${pctPos}%"></div>
+                            <div style="background:#f1c40f;width:${pctNeu}%" title="Neutral ${pctNeu}%"></div>
+                            <div style="background:#e74c3c;width:${pctNeg}%" title="Negative ${pctNeg}%"></div>
+                        </div>
+                        <div style="display:flex;justify-content:space-between;font-size:10px;margin-bottom:8px">
+                            <span style="color:#2ecc71">+ ${pctPos}%</span>
+                            <span style="color:#f1c40f">~ ${pctNeu}%</span>
+                            <span style="color:#e74c3c">− ${pctNeg}%</span>
+                        </div>
+                        <div style="font-size:9.5px;color:rgba(255,255,255,0.4);letter-spacing:0.8px;text-transform:uppercase;margin-bottom:3px">Top terms</div>
+                        ${top5}
                     `)
-                    .style('left', (event.clientX + 12) + 'px')
+                    .style('left', (event.clientX + 14) + 'px')
                     .style('top',  (event.clientY  - 10) + 'px');
             })
             .on('mousemove', function (event) {
-                tooltip
-                    .style('left', (event.clientX + 12) + 'px')
-                    .style('top',  (event.clientY  - 10) + 'px');
+                // Keep tooltip near cursor but inside viewport
+                const tipNode = tooltip.node();
+                const tipW = tipNode ? tipNode.offsetWidth : 280;
+                const tipH = tipNode ? tipNode.offsetHeight : 200;
+                let x = event.clientX + 14;
+                let y = event.clientY - 10;
+                if (x + tipW > window.innerWidth)  x = event.clientX - tipW - 14;
+                if (y + tipH > window.innerHeight) y = window.innerHeight - tipH - 8;
+                if (y < 8) y = 8;
+                tooltip.style('left', x + 'px').style('top', y + 'px');
             })
-            .on('mouseout', function () {
+            .on('mouseout', function (event, d) {
                 d3.select(this).attr('stroke', 'rgba(255,255,255,0.15)').attr('stroke-width', 0.7);
                 tooltip.style('opacity', 0).style('display', 'none');
             });
@@ -240,8 +284,8 @@ function renderRegionalMap() {
         function resetHighlight() {
             svg.selectAll('.state')
                 .attr('opacity', 1)
-                .attr('stroke', 'rgba(255,255,255,0.15)')
-                .attr('stroke-width', 0.7);
+                .attr('stroke', d => d.properties.name === selectedState ? '#a78bfa' : 'rgba(255,255,255,0.15)')
+                .attr('stroke-width', d => d.properties.name === selectedState ? 2.2 : 0.7);
         }
 
         // ── Invisible overlay rect: captures mouse events on legend ───────────
@@ -292,4 +336,5 @@ function renderRegionalMap() {
         const c = document.getElementById('regional-viz');
         if (c) c.innerHTML = '<p style="color:#ff6b6b;padding:1rem">Failed to load regional map data.</p>';
     });
-}       
+}
+

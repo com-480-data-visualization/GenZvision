@@ -469,6 +469,7 @@ function renderCosmos() {
                     <span>CONSTELLATIONS</span>
                     <button class="cosmos-clear-btn" id="cosmos-clear" style="display:none">× clear</button>
                 </div>
+                <div class="cosmos-legend-hint">★ Click a constellation to isolate its galaxy</div>
                 <div class="cosmos-legend-grid" id="cosmos-legend-grid"></div>
             `;
             document.getElementById('cosmos-legend-grid').innerHTML = constellations.map(c => `
