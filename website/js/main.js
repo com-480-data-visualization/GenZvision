@@ -142,6 +142,8 @@ function renderHeroViz() {
         simulation.on('end', () => {
             // Simulation complete, words are positioned
         });
+    }).catch(err => {
+        console.error('Hero word cloud error:', err);
     });
 }
 

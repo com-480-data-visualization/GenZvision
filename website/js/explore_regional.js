@@ -199,6 +199,9 @@ function renderRegionalExplore() {
                 })
                 .text(d => stateAbbr[d.properties.name] || '');
         });
+    }).catch(err => {
+        console.error('Explore regional map error:', err);
+        if (mapDiv) mapDiv.innerHTML = '<p style="color:#ff6b6b;padding:1rem">Failed to load regional explorer.</p>';
     });
 }
 

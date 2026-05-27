@@ -287,5 +287,9 @@ function renderRegionalMap() {
                 resetHighlight();
             });
 
+    }).catch(err => {
+        console.error('Regional map error:', err);
+        const c = document.getElementById('regional-viz');
+        if (c) c.innerHTML = '<p style="color:#ff6b6b;padding:1rem">Failed to load regional map data.</p>';
     });
 }       

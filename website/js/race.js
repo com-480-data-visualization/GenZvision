@@ -354,5 +354,8 @@ function renderRace() {
                 play();
             }
         }, 600);
+    }).catch(err => {
+        console.error('Race chart error:', err);
+        container.innerHTML = '<p style="color:#ff6b6b;padding:1rem">Failed to load race data.</p>';
     });
 }

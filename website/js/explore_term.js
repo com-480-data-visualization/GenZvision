@@ -8,13 +8,13 @@
 
   /* ---------- constants ---------- */
   const PLATFORM_COLORS = {
-    TikTok:    '#fe2c55',
+    TikTok:    '#fb7185',
     Twitter:   '#1da1f2',
-    Reddit:    '#ff4500',
-    Instagram: '#e1306c',
-    YouTube:   '#ff0000',
-    Discord:   '#5865f2',
-    Twitch:    '#9146ff'
+    Reddit:    '#fb923c',
+    Instagram: '#c13584',
+    YouTube:   '#dc2626',
+    Discord:   '#3b3fd9',
+    Twitch:    '#c084fc'
   };
 
   const PHASE_COLORS = {
@@ -70,6 +70,10 @@
       d3.json('data/platform_flow.json')
     ]).then(function ([lifecycle, fresco, platformFlow]) {
       build(lifecycle.summary, lifecycle.trajectory, fresco, platformFlow.overall || []);
+    }).catch(function (err) {
+      console.error('Term Explorer error:', err);
+      const c = document.getElementById('term-explorer-root') || document.querySelector('.explore-card-term');
+      if (c) c.innerHTML = '<p style="color:#ff6b6b;padding:1rem">Failed to load term data.</p>';
     });
   };
 

@@ -10,13 +10,13 @@
         body {
             font-family: 'Inter', sans-serif;
             color: #1a1a2e;
-            line-height: 1.4;
+            line-height: 1.35;
             background: #fff;
             font-size: 9.5pt;
         }
-        @page { size: A4; margin: 1cm 1.4cm; }
+        @page { size: A4; margin: 0.8cm 1.2cm; }
         @page :first { margin: 0; }
-        .content { max-width: 720px; margin: 0 auto; padding: 8px 16px; }
+        .content { max-width: 720px; margin: 0 auto; padding: 4px 14px; }
 
         /* Cover */
         .cover {
@@ -125,7 +125,7 @@
             background: linear-gradient(135deg, #7c3aed, #ec4899);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
             background-clip: text; color: #7c3aed;
-            margin: 12px 0 5px; padding-bottom: 3px;
+            margin: 6px 0 3px; padding-bottom: 2px;
             border-bottom: 2px solid #e8e0f5;
             page-break-after: avoid;
             position: relative;
@@ -142,22 +142,22 @@
             background: linear-gradient(135deg, #7c3aed, #ec4899);
             color: white;
             padding: 2px 9px; border-radius: 10px;
-            margin: 10px 0 0;
+            margin: 4px 0 0;
             -webkit-print-color-adjust: exact; print-color-adjust: exact;
             page-break-after: avoid;
         }
         .section-kicker + h2 {
-            margin-top: 2px;
+            margin-top: 1px;
         }
         h3 {
             font-size: 10pt; font-weight: 600; color: #333;
-            margin: 6px 0 3px; page-break-after: avoid;
+            margin: 4px 0 2px; page-break-after: avoid;
         }
         h4 {
             font-size: 9.5pt; font-weight: 600; color: #7c3aed;
-            margin: 5px 0 2px; page-break-after: avoid;
+            margin: 3px 0 1px; page-break-after: avoid;
         }
-        p { margin-bottom: 3px; }
+        p { margin-bottom: 2px; }
         .small { font-size: 9pt; color: #666; }
 
         .highlight-box {
@@ -185,7 +185,7 @@
 
         /* === BEFORE/AFTER CARDS === */
         .ba-card {
-            margin: 8px 0 10px;
+            margin: 5px 0 6px;
             page-break-inside: avoid;
             position: relative;
         }
@@ -320,11 +320,32 @@
         .feat-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 7px;
-            margin: 6px 0;
+            gap: 5px;
+            margin: 4px 0;
+            align-items: start;
         }
         .feat-grid-single {
             grid-template-columns: 1fr;
+        }
+        /* Full-width feature card (stands outside the grid, spans full content width) */
+        .feat-card.feat-card-fullwidth {
+            display: block;
+            width: 100%;
+            margin: 5px 0 0;
+            page-break-inside: avoid;
+        }
+        /* Masonry-style: cards flow into 2 balanced columns, no row gaps */
+        .feat-grid-masonry {
+            display: block !important;
+            column-count: 2;
+            column-gap: 5px;
+        }
+        .feat-grid-masonry .feat-card {
+            display: block;
+            break-inside: avoid;
+            -webkit-column-break-inside: avoid;
+            page-break-inside: avoid;
+            margin-bottom: 5px;
         }
         .feat-card {
             background: linear-gradient(135deg, #ffffff 0%, #faf6ff 100%);
@@ -366,26 +387,25 @@
             font-family: 'SF Mono', Consolas, monospace;
         }
 
-        /* Feature card with embedded final-viz preview */
+        /* Feature card with embedded final-viz preview (stacked: image on top, text below) */
         .feat-card.with-img {
             padding: 0;
             overflow: hidden;
-            display: grid;
-            grid-template-columns: 170px 1fr;
-            gap: 0;
+            display: flex;
+            flex-direction: column;
         }
         .feat-card.with-img .feat-img {
             display: flex;
             align-items: center;
             justify-content: center;
             background: linear-gradient(135deg, #0f0a1a 0%, #1a0e2e 50%, #2d1458 100%);
-            padding: 6px;
-            border-right: 1px solid rgba(124, 58, 237, 0.18);
+            padding: 8px;
+            border-bottom: 1px solid rgba(124, 58, 237, 0.18);
             -webkit-print-color-adjust: exact; print-color-adjust: exact;
-            min-height: 135px;
+            min-height: 170px;
         }
         .feat-card.with-img .feat-img img {
-            width: 100%; max-height: 130px; object-fit: contain;
+            width: 100%; max-height: 160px; object-fit: contain;
             display: block; border-radius: 3px;
         }
         .feat-card.with-img .feat-img-label {
@@ -395,19 +415,42 @@
             padding: 7px 10px 8px;
         }
 
+        /* Full-width card variant (spans both grid columns, image left + text right) */
+        .feat-card-full {
+            grid-column: 1 / -1;
+        }
+        .feat-card-full.with-img {
+            flex-direction: row;
+        }
+        .feat-card-full.with-img .feat-img {
+            flex: 0 0 240px;
+            border-bottom: none;
+            border-right: 1px solid rgba(124, 58, 237, 0.18);
+            min-height: 0;
+        }
+        .feat-card-full.with-img .feat-img img {
+            max-height: 200px;
+        }
+        .feat-card-full.with-img .feat-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
         /* === SITE-STYLE INFO CARDS (for peer assessment) === */
         /* Mimics the click-to-explore cards on the live site */
         .peer-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 8px;
-            margin: 6px 0;
+            gap: 5px;
+            margin: 4px 0;
         }
         .peer-card {
             background: linear-gradient(135deg, #0f0a1a 0%, #15102a 60%, #1f1240 100%);
             border: 1px solid rgba(124, 58, 237, 0.25);
             border-radius: 10px;
-            padding: 9px 11px 10px;
+            padding: 6px 10px 7px;
             position: relative;
             overflow: hidden;
             page-break-inside: avoid;
@@ -558,25 +601,28 @@
 <h2>1. How We Got Here</h2>
 
 <h3>Choosing the Dataset</h3>
-<p>From the start, we wanted a dataset that would be genuinely fun to work with, something that people would immediately connect with, not a dry technical topic. When we found the <strong>GenZ Slang Evolution Tracker (2020-2025)</strong> on Kaggle, it clicked right away. The dataset has 535,396 rows and 22 columns, which gave us a lot to work with: slang terms, timestamps, origin and usage platforms, regions, age groups, usage contexts, lifecycle phases, sentiment scores, virality metrics, engagement stats (likes, shares, comments), and more. That variety is what really sold us, with 22 columns, we could approach the data from many different angles (temporal, geographic, cross-platform, demographic, emotional) without running out of interesting questions to ask. The volume of data (over half a million observations across 46 unique terms and 22 regions) also meant we could show real patterns rather than anecdotal trends.</p>
+<p>From the start, we wanted a dataset that would be fun to work with, something that people would immediately connect with, not a dry technical topic. The reasoning was simple: we are all Gen Z students ourselves, so picking a topic that lives inside our own culture meant we would actually care about every chart we built, and that anyone in our audience (peers, professors, other students) would feel the same instant familiarity when reading the site. We also wanted something <em>original</em>, not yet another COVID dashboard, election map, or climate dataset that everyone has already seen. When we found the <strong>GenZ Slang Evolution Tracker (2020-2025)</strong> on Kaggle, it clicked right away. The dataset has 535,396 rows and 22 columns, which gave us a lot to work with: slang terms, timestamps, origin and usage platforms, regions, age groups, usage contexts, lifecycle phases, sentiment scores, virality metrics, engagement stats (likes, shares, comments), and more. That variety is what really sold us, with 22 columns, we could approach the data from many different angles (temporal, geographic, cross-platform, demographic, emotional) without running out of interesting questions to ask. The volume of data (over half a million observations across 46 unique terms and 22 regions) also meant we could show real patterns rather than anecdotal trends.</p>
 
 <h3>Building the Skeleton</h3>
 <p>Early on, we decided to build a <strong>scrollytelling website</strong> rather than a traditional dashboard with tabs or filters. A scrollytelling layout lets the user passively discover the story by simply scrolling down, each section reveals the next chapter, like reading an article. This format works well for a narrative-driven project because it imposes a natural reading order: the user sees when terms appear before they see where they spread, and they see how terms age before they explore individual ones. It also avoids the "blank canvas" problem of dashboards where users don't know where to start. We used the Intersection Observer API to trigger each visualization only when the user scrolls it into view, which keeps the page fast and adds a nice reveal effect.</p>
 
 <h3>Choosing a Visual Identity</h3>
-<p>We went with a <strong>dark theme</strong> (near-black background with purple and pink accents). The main reason was coherence with the subject matter: Gen Z slang lives on platforms like TikTok, Discord, and Twitter, which are typically used at night, on phones, in dark mode. A white academic-looking layout would have felt completely disconnected from internet culture. The dark background also lets glowing elements (hover effects, particle animations, galaxy backgrounds) stand out naturally, and it's easier on the eyes for a long-scrolling site. We picked purple as our primary accent because it felt modern without being overused, and we kept the same color family (purples, pinks, violets) across the entire site so that everything looks like it belongs together.</p>
+<p>We went with a <strong>dark theme</strong> (near-black background with purple and pink accents). The main reason was coherence with the subject matter: Gen Z slang lives on platforms like TikTok, Discord, and Twitter, which are typically used at night, on phones, in dark mode. A white academic-looking layout would have felt disconnected from internet culture. The dark background also lets glowing elements (hover effects, particle animations, galaxy backgrounds) stand out naturally, and it's easier on the eyes for a long-scrolling site. We picked purple as our primary accent because it felt modern without being overused, and we kept the same color family (purples, pinks, violets) across the entire site so that everything looks like it belongs together.</p>
 
 <h3>From Sketches to Code</h3>
-<p>For Milestone 2, we drew 6 hand-made sketches for the core visualizations we wanted to build. The idea was to plan the visual encoding on paper before writing any code, figuring out which marks and channels would best answer each question. We then tried to reproduce those sketches as faithfully as possible using D3.js. We deliberately chose <strong>dynamic, animated visualizations</strong> (the bar chart race, the animated bubble chart, the orbiting particle donut) over static charts wherever it made sense. This wasn't the easy option, animations are significantly harder to implement, especially smooth transitions and force simulations, but they make the site far more engaging and interactive. A static bar chart of slang popularity is boring; watching terms overtake each other in real time is genuinely fun.</p>
+<p>For Milestone 2, we drew 6 hand-made sketches for the core visualizations we wanted to build. The idea was to plan the visual encoding on paper before writing any code, figuring out which marks and channels would best answer each question. We then tried to reproduce those sketches as faithfully as possible using D3.js. We deliberately chose some <strong>dynamic, animated, filter-driven visualizations</strong> (the bar chart race, the animated bubble chart, the orbiting particle donut) over static charts wherever it made sense. This wasn't the easy option, animations are significantly harder to implement, especially smooth transitions and force simulations, but they make the site far more engaging and interactive. A static bar chart of slang popularity is boring; watching terms overtake each other in real time is really fun. It is captivating and it keeps the viewer engaged long enough to actually read the data instead of just glancing at it.</p>
 
 <h3>Expanding Beyond the Original Plan</h3>
-<p>After finishing the 6 sketched visualizations, we realized we still had room to do more. The dataset has so many columns, age groups, usage contexts, world regions, sentiment, lifecycle phases, that stopping at 6 charts would have left a lot of interesting data unexplored. So we added 5 more sections, each one motivated by a question the existing visualizations didn't answer yet: the Vibe Wheel asks in which real-world contexts each slang term appears, the Chronicle asks when each term was first born and whether some years produced more new slang than others, the Generation Gap asks which age groups adopt each term and whether some words are teen-dominated or multi-generational, the World Map asks how slang adoption differs across global regions, and the Term Explorer asks what the full profile of one specific term looks like, from its usage curve and peak month to its platform, sentiment, and lifecycle phase.</p>
+<p>We actually finished what we had planned for Milestone 2 early, which left us with time before M3 and forced us to extend the scope. That sounds like a luxury, but in practice it meant scrambling to come up with new visualization ideas quickly enough to keep the project moving, without just adding charts for the sake of it. We had to find angles in the dataset that were still interesting and not redundant with what we already had. The dataset has so many columns, age groups, usage contexts, world regions, sentiment, lifecycle phases, that stopping at 6 charts would have left a lot of interesting data unexplored, so we sat down again and asked which questions our existing charts didn't answer yet. From that came 5 more sections: the Vibe Wheel asks in which real-world contexts each slang term appears, the Chronicle asks when each term was first born and whether some years produced more new slang than others, the Generation Gap asks which age groups adopt each term and whether some words are teen-dominated or multi-generational, the World Map asks how slang adoption differs across global regions, and the Term Explorer asks what the full profile of one specific term looks like, from its usage curve and peak month to its platform, sentiment, and lifecycle phase.</p>
+
+<h3>Team Coordination &amp; Time Management</h3>
+<p>One thing that went well throughout the project was how we coordinated as a team. We split up the work clearly from the start, each person owned specific visualizations and sections. Git merge conflicts were almost non-existent because of that clean separation. We also managed our time well overall: we finished the M2 deliverables early enough to have breathing room for the M3 expansion, instead of cramming everything into the last week. That allowed us to spend the extra time on polish, animations, and the visuals we actually cared about rather than rushing to ship a minimum-viable version.</p>
 
 <h3>Storytelling and Narrative</h3>
-<p>For the text on the site, we wanted something that anyone could read and enjoy, not a dry data report. We wrote each section introduction as if we were explaining the data to a friend: casual tone, concrete examples ("One day nobody's heard of skibidi. Three weeks later, your mom says it at dinner"), and specific numbers pulled from the actual data. Between sections, we added short transition sentences that connect one question to the next ("Some terms flash and fade. Others stack up dominance for years. Who wins?"). The goal was to make scrolling through the site feel like reading a story, not browsing a dashboard.</p>
+<p>For the text on the site, we wanted something that anyone could read and enjoy, not a dry data report. We wrote each section introduction as if we were explaining the data to a friend: casual tone, concrete everyday examples, and specific numbers pulled directly from the data so the narrative stays grounded. Between sections, we added short transition sentences that pose the next question and connect one chart to the following one. The goal was to make scrolling through the site feel like reading a story, not browsing a dashboard.</p>
 
 <!-- 2. FROM SKETCHES TO FINAL -->
-<div class="section-kicker">Reusing &amp; expanding the M1 sketches</div>
+<div class="section-kicker">Reusing &amp; expanding the M2 sketches</div>
 <h2>2. From Sketches to Final Product</h2>
 <p>Below we show each of our 6 original M2 sketches alongside a description of what the final implementation looks like, and what changed along the way.</p>
 
@@ -595,7 +641,7 @@
             <img src="data/finals/heatmap.svg" alt="Heatmap final">
         </div>
     </div>
-    <div class="ba-desc"><strong>Sketch:</strong> Rows = terms, columns = months, color = YlOrRd intensity. <strong>Final:</strong> We kept this almost exactly as sketched, same YlOrRd color scale, same row-per-term layout. The main changes were limiting it to the top 15 terms (showing all 46 made it illegible), and adding hover tooltips that display the exact month, count, sentiment, and average intensity for each cell. Average intensity represents the average strength of the term's usage during that month, so it helps distinguish a weak appearance from a moment where the term was strongly trending. The heatmap was one of our M2 deliverables and was already working by Milestone 2, so very little changed between M2 and M3 for this one.</div>
+    <div class="ba-desc"><strong>Sketch:</strong> The sketch shows a grid where each row is a slang term and each column is a month, and the color of each cell encodes its usage intensity on a yellow-to-orange-to-red scale (YlOrRd, from ColorBrewer). <strong>Final:</strong> We kept this almost exactly as sketched, same YlOrRd color scale, same row-per-term layout. The main changes were limiting it to the top 15 terms (showing all 46 made it illegible), and adding hover tooltips that display the exact month, count, sentiment, and average intensity for each cell. Average intensity represents the average strength of the term's usage during that month, so it helps distinguish a weak appearance from a moment where the term was strongly trending.</div>
 </div>
 
 <!-- THE SPREAD -->
@@ -612,7 +658,7 @@
             <img src="data/finals/sankey.svg" alt="Sankey final">
         </div>
     </div>
-    <div class="ba-desc"><strong>Sketch:</strong> Origin platforms (left) &rarr; usage platforms (right), flow width = number of terms. <strong>Final:</strong> Very close to the sketch. We used d3-sankey for the layout and added highlight-on-hover (the selected flow stays bright, others fade to 10% opacity). Also already working in M2. The final version added Discord as a right-side node, which wasn't in the sketch, it turned out to be interesting because Discord never originates slang but absorbs everything.</div>
+    <div class="ba-desc"><strong>Sketch:</strong> The idea is to show origin platforms on the left flowing into usage platforms on the right, with the width of each flow encoding the number of terms that move between them. <strong>Final:</strong> Very close to the sketch. We used d3-sankey for the layout and added highlight-on-hover (the selected flow stays bright, others fade to 10% opacity). The final version added Discord as a right-side node, which wasn't in the sketch, it turned out to be interesting because Discord never originates slang but absorbs everything.</div>
 </div>
 
 <!-- PEAK & DECLINE -->
@@ -629,7 +675,7 @@
             <img src="data/finals/bubble.svg" alt="Bubble final">
         </div>
     </div>
-    <div class="ba-desc"><strong>Sketch:</strong> Two views, a dynamic version animated over time, and a static snapshot. Bubbles colored by lifecycle phase (Growing, Peak, Declining, Dormant, Niche), size = monthly usage. <strong>Final:</strong> We implemented the dynamic version with a play/pause button and time slider. The static view was dropped, the animated version tells the story better on its own. This was also a M2 deliverable. The main M3 improvement was force simulation tuning: getting bubbles to not overlap while still looking natural took a lot of parameter tweaking (forceCollide radius, forceManyBody strength, alpha decay).</div>
+    <div class="ba-desc"><strong>Sketch:</strong> The sketch proposes a dynamic visualisation animated over time. Bubbles are colored by lifecycle phase (Growing, Peak, Declining, Dormant, Niche) and their size encodes monthly usage. <strong>Final:</strong> We implemented it with a play/pause button and time slider. The main M3 improvement was force simulation tuning: getting bubbles to not overlap while still looking natural took a lot of parameter tweaking (forceCollide radius, forceManyBody strength, alpha decay). Fitting the text inside each bubble was challenging. Small bubbles ended up with labels overflowing past their edges, so we scaled the font size proportionally to the bubble radius.</div>
 </div>
 
 <!-- THE RACE -->
@@ -646,7 +692,7 @@
             <img src="data/finals/race.svg" alt="Race final">
         </div>
     </div>
-    <div class="ba-desc"><strong>Sketch:</strong> Terms in ranked lanes competing over time, like a sports leaderboard. The sketch shows two snapshots (2022 vs 2023) with "slay" at #1 dropping to #6. <strong>Final:</strong> We implemented this as a horizontal bar chart race with a play button and slider. The sketch concept translated well because the ranking format makes it interesting to watch terms lose momentum, climb back up, or suddenly enter the leaderboard as usage changes over time. This was originally a stretch goal from M2 but we implemented it for M3 because the competitive format makes temporal data much more fun than just a line chart.</div>
+    <div class="ba-desc"><strong>Sketch:</strong> The sketch shows slang terms racing each other in ranked lanes over time, like a sports leaderboard, with snapshots illustrating how the ranking reshuffles as usage changes. <strong>Final:</strong> We implemented this as a horizontal bar chart race with a play button and slider. The sketch concept translated well because the ranking format makes it interesting to watch terms lose momentum, climb back up, or suddenly enter the leaderboard as usage changes over time. This was originally a stretch goal from M2 but we implemented it for M3 because the competitive format makes temporal data much more fun than just a line chart.</div>
 </div>
 
 <!-- THE COSMOS -->
@@ -663,7 +709,7 @@
             <img src="data/finals/cosmos.svg" alt="Cosmos final">
         </div>
     </div>
-    <div class="ba-desc"><strong>Sketch:</strong> A scatter plot (X = sentiment, Y = intensity) with constellation lines connecting terms in the same category, shown on a dark starry background. Two versions sketched, one with visible quadrant zones, one with a more immersive night-sky look. <strong>Final:</strong> This is the visualization that changed the most. The basic scatter encoding stayed the same (position = sentiment vs. intensity, size = usage count), but we went much further on the visual side. Instead of simple constellation lines, we added parametric spiral galaxy formations at each category centroid, 350 twinkling background stars, a Milky Way band of micro-particles, and cross-shaped spikes on large data points. The galaxies use logarithmic spiral arm equations. This was probably the hardest visualization technically, our first attempt just had simple circles and it looked boring. The galaxy generator went through 3 rewrites before looking convincing.</div>
+    <div class="ba-desc"><strong>Sketch:</strong> The sketch shows a scatter plot with sentiment on the X axis and intensity on the Y axis, where constellation lines connect terms that belong to the same category, all placed on a dark starry background. <strong>Final:</strong> This is the visualization that changed the most. The basic scatter encoding stayed the same (position = sentiment vs. intensity, size = usage count), but we went much further on the visual side. Instead of simple constellation lines, we added parametric spiral galaxy formations at each category centroid, 350 twinkling background stars, a Milky Way band of micro-particles, and cross-shaped spikes on large data points. The galaxies use logarithmic spiral arm equations. We also added an interaction layer: clicking any star zooms into its galaxy so the user can explore all the related terms in that category in detail. This was probably the hardest visualization technically, our first attempt just had simple circles and it looked boring. The galaxy generator went through 3 rewrites before looking convincing.</div>
 </div>
 
 <!-- THE MAP -->
@@ -680,14 +726,14 @@
             <img src="data/finals/regional.svg" alt="Map final">
         </div>
     </div>
-    <div class="ba-desc"><strong>Sketch:</strong> A US choropleth with a YlOrRd color scale encoding slang adoption intensity. <strong>Final:</strong> The map is implemented with D3-geo and TopoJSON (AlbersUSA projection). We also added a click-to-explore panel: clicking a state opens a side panel with the state's top terms as a bar chart, dominant platform, usage, and average sentiment. The world map in the Explore section uses the same pattern (NaturalEarth1 projection, click-to-explore with country data).</div>
+    <div class="ba-desc"><strong>Sketch:</strong> The sketch shows a US choropleth where each state is colored on a yellow-to-orange-to-red scale (YlOrRd, from ColorBrewer) that encodes slang adoption intensity in that state. <strong>Final:</strong> The map is implemented with D3-geo and TopoJSON (AlbersUSA projection). We also added a click-to-explore panel: clicking a state opens a side panel with the state's top terms as a bar chart, dominant platform, usage, and average sentiment. The world map in the Explore section uses the same pattern (NaturalEarth1 projection, click-to-explore with country data).</div>
 </div>
 
 
 <!-- 3. VISUALIZATIONS NOT IN ORIGINAL PLAN -->
-<div class="section-kicker">New charts beyond the M1 plan</div>
+<div class="section-kicker">New charts beyond the M2 plan</div>
 <h2>3. Visualizations Added Beyond M2</h2>
-<p>Several visualizations were not in the M1/M2 plan. They came from questions that naturally arose as we built the story:</p>
+<p>Several visualizations were not in the M2 plan. They came from questions that naturally arose as we built the story, and each one was deliberately chosen to answer a question the existing 6 charts could not. The Vibe Wheel exists because none of our M2 charts told us in which real-world <em>contexts</em> (gaming, dating, food reviews&hellip;) a term actually shows up &mdash; a radial layout was the most natural way to compare 17 contexts at a glance without horizontal scrolling. The Chronicle came directly from M2 feedback (our TA pointed out we were ignoring the "first appearance" information in the data), and we picked a horizontal timeline rather than a bar chart because birth dates are inherently positional, not magnitudinal. The Generation Gap uses an animated donut with orbiting particles instead of a grouped bar chart because the particles communicate <em>distribution</em> as a living population rather than abstract percentages, which fits a topic about people. The World Map extends the US Map's click-to-explore pattern to global regions for consistency. Finally, the Term Explorer closes the Shneiderman mantra (overview &rarr; zoom &rarr; details on demand) that none of our other charts truly delivered on their own.</p>
 
 <div class="feat-grid">
     <div class="feat-card with-img">
@@ -697,7 +743,7 @@
         </div>
         <div class="feat-body">
             <div class="feat-card-title"><span class="num">07</span> The Vibes (Vibe Wheel)</div>
-            <p>A radial chart with 17 context slices (gaming, dating, memes, food reviews...) showing which terms dominate each context. Inner rings encode sentiment, outer rings encode age. This replaced the ridgeline plot from M2's stretch goals, the wheel packs more dimensions into a single view and is more visually distinct.</p>
+            <p>A radial chart with 17 context slices (gaming, dating, memes, food reviews...) showing which terms dominate each context. Inner rings encode sentiment, outer rings encode age. This replaced the ridgeline plot from M2's stretch goals, the wheel packs more dimensions into a single view and is more visually distinct. We wanted something colourful and meaningful and original at the same time.</p>
         </div>
     </div>
     <div class="feat-card with-img">
@@ -707,7 +753,7 @@
         </div>
         <div class="feat-body">
             <div class="feat-card-title"><span class="num">08</span> The Chronicle</div>
-            <p>A horizontal timeline showing the exact month each term was first coined. Dot color = origin platform, size = number of terms born that month. 2023 stands out with 11 new terms in a single year. The idea for this visualization came directly from the M2 feedback: our TA suggested we exploit the information of when slang terms first appeared, and we found it judicious to put that on a simple timeline.</p>
+            <p>A horizontal timeline showing the exact month each term was first coined. The dot color tells the origin platform, the size shows the number of terms born that month. 2023 stands out with 11 new terms in a single year. The idea for this visualization came directly from the M2 feedback: the TA suggested we exploit the information of when slang terms first appeared, and we found it judicious to put that on a simple timeline.</p>
         </div>
     </div>
     <div class="feat-card with-img">
@@ -717,7 +763,7 @@
         </div>
         <div class="feat-body">
             <div class="feat-card-title"><span class="num">09</span> The Generation Gap</div>
-            <p>An animated donut chart with 200 orbiting particles showing age group distributions per term. A dropdown lets you switch terms, the arcs morph smoothly (custom attrTween) and particles redistribute by color. Selecting "skibidi" shows around 37% teen usage; "gaslighting" is spread evenly across all ages.</p>
+            <p>It is an animated donut chart with 200 orbiting particles showing age group distributions per term. A dropdown lets you switch terms, the arcs morph smoothly (custom attrTween) and particles redistribute by color. For example, selecting "rizz" shows around 43% teen (13-17) usage; "gaslighting" is spread fairly evenly across all five age groups (17% / 28% / 22% / 16% / 17%).</p>
         </div>
     </div>
     <div class="feat-card with-img">
@@ -727,17 +773,17 @@
         </div>
         <div class="feat-body">
             <div class="feat-card-title"><span class="num">10</span> World Map (Global Adoption)</div>
-            <p>A world choropleth (NaturalEarth1 projection) showing how slang adoption varies across the 22 global regions in the dataset. Same click-to-explore pattern as the US Regional Map: clicking a country opens a side panel with that region's top terms, dominant platform, total usage, and average sentiment. This complements the US-only Regional Map by giving an international perspective.</p>
+            <p>It is a world choropleth (NaturalEarth1 projection) showing how slang adoption varies across the 22 global regions in the dataset. Same click-to-explore pattern as the US Regional Map: clicking a country opens a side panel with that region's top terms, dominant platform, total usage, and average sentiment. This complements the US-only Regional Map by giving an international perspective.</p>
         </div>
     </div>
-    <div class="feat-card with-img">
+    <div class="feat-card with-img feat-card-full">
         <div class="feat-img" style="position:relative">
             <div class="feat-img-label">Final</div>
             <img src="data/finals/termexplorer.png" alt="Term Explorer final">
         </div>
         <div class="feat-body">
             <div class="feat-card-title"><span class="num">11</span> Term Explorer</div>
-            <p>A searchable card explorer where you can look up any term's usage curve, peak month, top platform, sentiment, and lifecycle phase. This is the "details on demand" that closes the Shneiderman mantra we follow across the site.</p>
+            <p>A searchable card explorer where you can look up any term's usage curve, peak month, top platform, sentiment, and lifecycle phase. This is the "details on demand" that closes the Shneiderman mantra we follow across the site: overview first, then zoom and filter, then details on demand. We wanted to end the story on a note that hands the wheel back to the reader, instead of locking them into our chosen narrative. After scrolling through ten guided visualizations, the Term Explorer lets the reader pick any term that caught their attention along the way and dig deeper on their own terms, finding their own patterns and forming their own questions. The goal was not to close the story but to leave the reader wanting to keep exploring.</p>
         </div>
     </div>
 </div>
@@ -749,19 +795,27 @@
 <div class="feat-grid feat-grid-single">
     <div class="feat-card">
         <div class="feat-card-title">Dark Theme</div>
-        <p>We chose a dark background (near-black with purple/pink accents) because our audience is students and internet-culture fans. A white academic layout would feel disconnected from the TikTok/Discord world where slang actually lives. Glow effects and particle animations feel natural on a dark canvas.</p>
+        <p>We chose a dark background (near-black with purple/pink accents) because our audience is students and internet-culture fans. A white academic layout would feel disconnected from the TikTok/Discord world where slang actually lives. Glow effects and particle animations feel natural on a dark canvas, and the dark canvas also makes saturated accent colors pop more, which we used as a preattentive cue to draw the eye to important elements (active dots, hovered bubbles, selected galaxies) without needing extra labels.</p>
     </div>
     <div class="feat-card">
         <div class="feat-card-title">Scrollytelling vs. Dashboard</div>
-        <p>The data has a natural narrative arc (Rise &rarr; Race &rarr; Spread &rarr; Decline &rarr; ...), so a scroll-driven story works better than tabs. We added transition sentences between sections to connect the narrative. Following L12: start with an interesting hook, maintain a linear flow, limit interactivity to key elements.</p>
+        <p>The data has a natural narrative arc (Rise &rarr; Race &rarr; Spread &rarr; Decline &rarr; ...), so a scroll-driven story works better than tabs or a free-form dashboard. We structured the page as a linear story: open with a strong hook (the hero word cloud and four big numbers), maintain a steady flow from one question to the next using short transition sentences between sections, and limit heavy interactivity to a few key moments rather than letting the user wander aimlessly. The goal was a guided reading experience, not a control panel.</p>
+    </div>
+    <div class="feat-card">
+        <div class="feat-card-title">Dynamic, Animated &amp; Filter-driven Charts</div>
+        <p>Wherever it made sense, we picked dynamic or animated charts over static ones because animation is genuinely more fun and it puts changing values in context over time. The Bar Chart Race plays back five years of leaderboard shuffling. The Bubble Chart animates lifecycle phases month by month. The Generation Gap donut morphs its arcs smoothly when the user picks a different term in the dropdown. The hero section has a floating word cloud and animated counters that count up on page load. Hovering a slang term anywhere triggers glow rings and spring-easing micro-animations. We also leaned into filter-driven (dynamic-query) interactions where the user changes one input and the chart redraws immediately, which keeps exploration fast and responsive. A static dashboard would have shown the same data, but it would not have felt alive in the same way.</p>
+    </div>
+    <div class="feat-card">
+        <div class="feat-card-title">Encoding &amp; Color Principles</div>
+        <p>We were careful with the visual encoding of each chart. For ordered data (usage intensity, sentiment, adoption rate) we used sequential color scales with proportional changes in lightness, so the eye can rank values without effort. For categorical data (lifecycle phase, platform, age group, category) we used a limited palette of perceptually distinct hues, and we kept the same color assignments consistent across charts so that, for example, TikTok is always the same red-pink wherever it appears. Position is reserved for the most important quantitative variables (time, sentiment, intensity, rank), with size, color, and animation layered on for secondary channels. We followed the expressiveness principle: the encoding only carries information that actually exists in the data, no decorative bars or fake categories.</p>
     </div>
     <div class="feat-card">
         <div class="feat-card-title">Lazy Rendering</div>
-        <p>Each visualization renders only when it scrolls into view (IntersectionObserver). Both a performance choice (11 D3 visualizations at page load would be slow) and a storytelling one, the user discovers each chart as they scroll.</p>
+        <p>Each visualization renders only when it scrolls into view (IntersectionObserver). This is both a performance choice (11 D3 visualizations at page load would be slow) and a storytelling one: the user discovers each chart at the moment they arrive at it, which makes every section feel like a reveal rather than a wall of pre-loaded content.</p>
     </div>
     <div class="feat-card">
         <div class="feat-card-title">Interaction: "Hover reveals, click explores"</div>
-        <p>Hovering any data point shows a tooltip. Clicking (where supported) opens a deeper view, side panels on maps, full term profiles. Animated sections have explicit play/pause so the user stays in control. No auto-playing animations.</p>
+        <p>Hovering any data point shows a tooltip with details. Clicking (where supported) opens a deeper view: side panels on maps, focused galaxies in the Cosmos, full term profiles in the Explorer. Animated sections (Race, Bubble Chart) have explicit play/pause controls and a slider so the user stays in charge of the timeline. No auto-playing animations that the user cannot stop, no surprise modal pop-ups. This follows the visual information-seeking mantra we applied across the site: overview first, then zoom and filter, then details on demand.</p>
     </div>
 </div>
 
@@ -775,23 +829,24 @@
         <p>The hardest part. Our first attempt just had glowing circles at category centroids, it looked nothing like galaxies. We rewrote the generator 3 times, eventually settling on parametric logarithmic spirals flattened into ellipses (Y compressed by 0.6). Each galaxy has a radial gradient core, 2-4 spiral arms, and is rotated by a random angle. Getting the particle density and color variation right took trial and error.</p>
     </div>
     <div class="feat-card">
-        <div class="feat-card-title">Force Simulation (Bubble Chart + Hero)</div>
-        <p>D3 force simulation has many parameters that interact in non-obvious ways. Bubbles would either overlap, jitter endlessly, or settle into an ugly grid. The final combination: forceManyBody(strength: -30), forceCollide(radius: bubble size * 1.5), forceX/Y(strength: 0.02), alphaDecay(0.05).</p>
+        <div class="feat-card-title">D3 Animation Tuning</div>
+        <p>Two charts needed serious animation work. For the bubble chart, the force simulation has many parameters that interact in non-obvious ways: bubbles would either overlap, jitter endlessly, or settle into an ugly grid. The final combination: <code>forceManyBody(-30)</code>, <code>forceCollide(radius &times; 1.5)</code>, <code>forceX/Y(0.02)</code>, <code>alphaDecay(0.05)</code>. For the Generation Gap donut, switching terms requires smooth arc morphing, which D3 doesn't do automatically for arc paths, so we used a custom <code>attrTween</code> that stores the previous arc datum on each DOM element and interpolates between old and new.</p>
     </div>
     <div class="feat-card">
-        <div class="feat-card-title">Arc Interpolation (Generation Gap)</div>
-        <p>When switching terms, the donut arcs need to morph smoothly. D3 doesn't do this automatically for arc paths. We used custom <code>attrTween</code> that stores the previous arc datum on each DOM element and interpolates between old and new, producing smooth continuous transitions.</p>
+        <div class="feat-card-title">Getting THE Visual We Wanted</div>
+        <p>This was honestly one of the recurring struggles. Across almost every visualization, the first working version rarely matched what we had in mind. The data would render correctly but the chart would feel flat, badly proportioned, or visually generic. We often had to iterate many times on color, spacing, animation timing, label placement, and overall composition before the chart looked like something we actually wanted to put on the site. Translating a vague mental image into specific D3 code, then into something that feels polished, was rarely straightforward.</p>
     </div>
     <div class="feat-card">
-        <div class="feat-card-title">Map Color Iterations</div>
-        <p>The world map went through 4 color palette iterations: (1) dark purple, invisible against black background, (2) teal-to-violet, looked illogical as a gradient, (3) light teal-to-bright violet, same problem, (4) monochrome purple (#b8a9d4 &rarr; #7c3aed) with a 0.65 power curve, finally worked. Lesson: within-family gradients (same hue, varying lightness) are always more readable.</p>
+        <div class="feat-card-title">Finding New Ideas Under Time Pressure</div>
+        <p>After finishing the M2 plan early, we had to come up with extra visualizations quickly. That sounds easier than it was, every new chart had to be both visually distinct from the existing ones and tied to a genuine question in the data. Coming up with 5 additional sections that all earned their place, instead of just padding the site with redundant charts, took more brainstorming than the original 6 sketches did.</p>
     </div>
 </div>
 
-<div class="callout">
-    <span class="label-tag">Responsive Donut Layout</span>
-    <p style="margin:0">The Generation Gap donut was initially placed in a two-column section (text left, viz right) which gave it only 337px of width, the outer labels were clipped. We had to switch to a custom stacked layout (text above, full-width viz below) and use a viewBox-based SVG for proper scaling. The <code>.viz-container</code> CSS class had <code>display: flex</code> which collapsed the SVG to 48px wide, debugging that took longer than building the donut itself.</p>
+<div class="feat-card feat-card-fullwidth">
+    <div class="feat-card-title">Choosing Colors</div>
+    <p>Picking colors was harder than expected, both for the choropleth maps (US and World) and for the platform-coded visualizations. For the maps, we went through several palette iterations before settling on a monochrome purple gradient (#b8a9d4 &rarr; #7c3aed) with a 0.65 power curve, because same-hue gradients varying only in lightness are far more readable than gradients that mix hues. For the platforms, we initially tried to stay close to each network's official brand color so that the user could recognize them instantly. The problem was that the original brand palettes are visually very close to each other: YouTube red looked almost identical to Reddit red-orange, Instagram pink-magenta was indistinguishable from TikTok red-pink, and Discord blurple blurred into Twitch purple. The issue was especially visible on the Chronicle timeline, where the dots are quite small and subtle color differences become impossible to read. We ended up shifting each color away from its brand default to push them further apart on the color wheel, while still keeping enough of the original hue so that the platform stays recognizable.</p>
 </div>
+
 
 <!-- 6. PEER ASSESSMENT -->
 <div class="section-kicker">Who did what on the team</div>
@@ -807,15 +862,15 @@
                 <div class="peer-sciper">SCIPER&nbsp;361496</div>
             </div>
         </div>
-        <div class="peer-role-badge">Vizs &amp; data</div>
+        <div class="peer-role-badge">Vizs &amp; process book</div>
         <div class="peer-section">
             <span class="peer-section-label">Visualizations</span>
-            Bar chart race (The Race), Platform Sankey (The Spread), Vibe Wheel (The Vibes), Term Explorer.
+            Timeline Heatmap (The Rise), Animated Bubble Chart (Peak &amp; Decline), Generation Gap (donut + particles), and the Vibe Wheel (The Vibes).
         </div>
         <div class="peer-divider"></div>
         <div class="peer-section">
             <span class="peer-section-label">Other contributions</span>
-            Data preprocessing pipeline (Python scripts for the JSON files). Original M1 sketches. Color palette design. Helped write process book.
+            Co-wrote the process book with Maryam.
         </div>
     </div>
 
@@ -827,15 +882,15 @@
                 <div class="peer-sciper">SCIPER&nbsp;359826</div>
             </div>
         </div>
-        <div class="peer-role-badge">Vizs &amp; narrative</div>
+        <div class="peer-role-badge">Vizs &amp; process book</div>
         <div class="peer-section">
             <span class="peer-section-label">Visualizations</span>
-            Timeline heatmap (The Rise), Animated bubble chart (Peak &amp; Decline), Generation Gap (donut + particles), World Map explorer. Built the scrollytelling layout, section transitions, and narrative connectors.
+            Bar Chart Race (The Race), Platform Sankey (The Spread), Term Explorer, and the Chronicle timeline.
         </div>
         <div class="peer-divider"></div>
         <div class="peer-section">
             <span class="peer-section-label">Other contributions</span>
-            Wrote all section texts and insight cards. Hero word cloud, animated counters, progress bar. CSS polish and responsive breakpoints. Led process book and screencast coordination.
+            Co-wrote the process book with Rania.
         </div>
     </div>
 
@@ -847,15 +902,15 @@
                 <div class="peer-sciper">SCIPER&nbsp;275047</div>
             </div>
         </div>
-        <div class="peer-role-badge">Maps &amp; EDA</div>
+        <div class="peer-role-badge">Maps &amp; screencast</div>
         <div class="peer-section">
             <span class="peer-section-label">Visualizations</span>
-            US Regional Map (The Map), Regional Explorer with click-to-explore panel, The Chronicle timeline.
+            US Regional Map (The Map) and World Map (Global Adoption), including the click-to-explore side panels on both.
         </div>
         <div class="peer-divider"></div>
         <div class="peer-section">
             <span class="peer-section-label">Other contributions</span>
-            EDA notebook (M1). Cross-browser testing (Chrome, Firefox, Safari). M1 related work and problematic sections. Regional data processing.
+            Recorded and edited the project screencast.
         </div>
     </div>
 
@@ -867,27 +922,31 @@
                 <div class="peer-sciper">SCIPER&nbsp;409205</div>
             </div>
         </div>
-        <div class="peer-role-badge">Cosmos &amp; infra</div>
+        <div class="peer-role-badge">Cosmos &amp; storytelling</div>
         <div class="peer-section">
             <span class="peer-section-label">Visualizations</span>
-            Slang Cosmos (galaxy generator + spiral arms + twinkling stars), play/pause controls and time slider interactions for animated sections.
+            The Slang Cosmos (the most technically demanding viz: galaxy generator with spiral arms, twinkling stars, Milky Way micro-particles, and the click-to-zoom interaction).
         </div>
         <div class="peer-divider"></div>
         <div class="peer-section">
             <span class="peer-section-label">Other contributions</span>
-            GitHub repo setup + Pages deployment. README (technical setup, project structure). Helped with age data preprocessing. Responsive layout testing.
+            Storytelling: wrote section intros, insight cards, and the transition sentences that connect one chart to the next across the site.
         </div>
     </div>
 
     <div class="peer-note">
-        <strong>Note:</strong> Design decisions (narrative structure, which vizs to build, color choices) were made collectively during team meetings. The breakdown reflects who led the implementation.
+        <strong>Note:</strong> All design choices on the site (narrative structure, which vizs to build, color palette, layout, interactions) were made collectively as a group during team meetings. The breakdown above only reflects who led the implementation of each part.
     </div>
 </div>
 
 <!-- 7. CONCLUSION -->
 <div class="section-kicker">Wrapping it up</div>
 <h2>7. Conclusion</h2>
-<p>GenZvision went from 6 hand-drawn sketches to 11 interactive D3.js visualizations. We delivered all 4 M2 core visualizations plus 7 additional ones, replacing one stretch goal (ridgeline plot) with something better (Vibe Wheel) and adding 4 entirely new sections (Chronicle, Generation Gap, World Map, Term Explorer). The core insight the project reveals: slang follows a predictable lifecycle, born on TikTok, adopted across platforms in weeks, peaking in months, fading just as fast. The words change constantly, but the pattern never does.</p>
+<p>GenZvision went from 6 hand-drawn sketches on paper to 11 interactive D3.js visualizations woven into a single scrollytelling story. We delivered every one of the 6 visualizations we had sketched at Milestone 2, then added 5 more sections that grew organically as we kept asking new questions of the data: the Vibe Wheel, the Chronicle, the Generation Gap, the World Map, and the Term Explorer. Together they tell, we believe, a coherent story of how Gen Z slang is born, spreads, peaks, and fades on the internet.</p>
+
+<p>Beyond the deliverables, what we will keep from this project is how enjoyable and instructive the whole process was. Picking a dataset we actually found fun changed everything: every obstacle we ran into felt worth the effort because the topic itself kept us curious. We learned a lot along the way, not only the technical D3 side (scales, transitions, force layouts, geographic projections, lazy rendering, interaction patterns), but also the softer skills that matter just as much: visual taste, narrative pacing, knowing when to cut something we liked because it didn't serve the story, and the discipline of iterating on a chart ten times until it finally felt right.</p>
+
+<p>The core insight the data reveals is that slang follows a remarkably predictable lifecycle, born on TikTok, adopted across other platforms in a matter of weeks, peaking in months, and fading just as fast. The specific words change constantly, but the underlying pattern never does. More importantly, the lesson we leave with as a team is that a good visualization project lives or dies on the same things as a good story: a clear hook, a coherent voice, and the patience to keep refining until every detail earns its place.</p>
 
 <div class="highlight-box">
     <strong>Links:</strong>

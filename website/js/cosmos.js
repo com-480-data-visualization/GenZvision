@@ -23,6 +23,13 @@ function renderCosmos() {
     d3.json('data/slang_cosmos.json').then(({ meta, constellations, terms }) => {
         container.innerHTML = '';
 
+        // Re-inject the click-hint badge (removed by clear)
+        const hint = document.createElement('div');
+        hint.className = 'cosmos-click-hint';
+        hint.id = 'cosmos-click-hint';
+        hint.textContent = '★ Click any star to focus its galaxy';
+        container.appendChild(hint);
+
         /* ── DIMENSIONS ────────────────────────────────────────────── */
         const W      = Math.max(container.clientWidth - 32, 480);
         const H      = Math.min(Math.round(W * 0.72), 580);
@@ -288,7 +295,7 @@ function renderCosmos() {
         const neutralLabel = mainG.append('text')
             .attr('x', xScale(0)).attr('y', -6).attr('text-anchor', 'middle')
             .attr('font-family', 'DM Sans').attr('font-size', '9px')
-            .attr('fill', 'rgba(255,255,255,0.18)').attr('letter-spacing', '0.5px')
+            .attr('fill', 'rgba(255,255,255,0.5)').attr('letter-spacing', '0.5px')
             .text('NEUTRAL');
 
         /* ── QUADRANT WATERMARKS ───────────────────────────────────── */
@@ -301,14 +308,15 @@ function renderCosmos() {
         ].forEach(q => q.lines.forEach((line, i) =>
             qG.append('text')
                 .attr('x', q.x).attr('y', q.y + i * 11)
-                .attr('text-anchor', 'middle').attr('font-family', 'DM Sans').attr('font-size', '8px')
-                .attr('fill', 'rgba(255,255,255,0.05)').attr('letter-spacing', '1.5px')
+                .attr('text-anchor', 'middle').attr('font-family', 'DM Sans').attr('font-size', '11px')
+                .attr('font-weight', '600')
+                .attr('fill', 'rgba(255,255,255,0.32)').attr('letter-spacing', '1.8px')
                 .attr('pointer-events', 'none').text(line)
         ));
 
         mainG.append('text').attr('x', 10).attr('y', 16)
             .attr('font-family', 'Outfit').attr('font-size', '10px')
-            .attr('fill', 'rgba(255,255,255,0.18)')
+            .attr('fill', 'rgba(255,255,255,0.55)')
             .text(`r = ${meta.correlation} — sentiment ⊥ intensity`);
 
         /* ── CONSTELLATION LINES ───────────────────────────────────── */
@@ -415,7 +423,7 @@ function renderCosmos() {
         const styleAxis = g => {
             g.select('.domain').attr('stroke', 'rgba(255,255,255,0.08)');
             g.selectAll('.tick line').attr('stroke', 'rgba(255,255,255,0.08)');
-            g.selectAll('.tick text').attr('fill', 'rgba(255,255,255,0.35)')
+            g.selectAll('.tick text').attr('fill', 'rgba(255,255,255,0.7)')
                 .attr('font-size', '11px').attr('font-family', 'DM Sans');
         };
 
@@ -426,12 +434,12 @@ function renderCosmos() {
 
         mainG.append('text').attr('x', iW / 2).attr('y', iH + 52)
             .attr('text-anchor', 'middle').attr('font-family', 'DM Sans').attr('font-size', '11.5px')
-            .attr('fill', 'rgba(255,255,255,0.38)')
+            .attr('fill', 'rgba(255,255,255,0.75)')
             .text('← Negative Sentiment  ·  Positive Sentiment →');
 
         mainG.append('text').attr('transform', `translate(${-58},${iH / 2}) rotate(-90)`)
             .attr('text-anchor', 'middle').attr('font-family', 'DM Sans').attr('font-size', '11.5px')
-            .attr('fill', 'rgba(255,255,255,0.38)')
+            .attr('fill', 'rgba(255,255,255,0.75)')
             .text('← Subdued  ·  Intensity  ·  Intense →');
 
         /* ── SIZE LEGEND ───────────────────────────────────────────── */
@@ -439,7 +447,7 @@ function renderCosmos() {
             .attr('transform', `translate(${W - margin.right + 6},${margin.top + 10})`);
         sizeLeg.append('text').attr('x', 0).attr('y', 0)
             .attr('font-family', 'DM Sans').attr('font-size', '8px')
-            .attr('fill', 'rgba(255,255,255,0.28)').attr('letter-spacing', '1px').text('USAGE');
+            .attr('fill', 'rgba(255,255,255,0.6)').attr('letter-spacing', '1px').text('USAGE');
         let yOff = 14;
         [meta.total_usage_range[0], 10000, meta.total_usage_range[1]].forEach(u => {
             const r = rScale(u);
@@ -448,7 +456,7 @@ function renderCosmos() {
                 .attr('stroke', 'rgba(255,255,255,0.22)').attr('stroke-width', 0.75);
             sizeLeg.append('text').attr('x', 18 + r + 4).attr('y', yOff + r)
                 .attr('dominant-baseline', 'central').attr('font-family', 'DM Sans').attr('font-size', '8px')
-                .attr('fill', 'rgba(255,255,255,0.28)')
+                .attr('fill', 'rgba(255,255,255,0.6)')
                 .text(u >= 10000 ? `${Math.round(u / 1000)}k` : `${(u / 1000).toFixed(1)}k`);
             yOff += r * 2 + 5;
         });
@@ -617,6 +625,8 @@ function renderCosmos() {
         starSel
             .on('click', function(event, d) {
                 toggleCat(d.category);
+                const hint = document.getElementById('cosmos-click-hint');
+                if (hint) hint.classList.add('hidden');
             })
             .on('mouseenter', function(event, d) {
                 if (selectedCats.size > 0 && !selectedCats.has(d.category)) return;

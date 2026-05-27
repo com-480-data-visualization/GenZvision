@@ -12,14 +12,15 @@ function renderFresco() {
     d3.json('data/fresco_data.json').then(raw => {
         container.innerHTML = '';
 
-        /* ─── Platform colors ─── */
+        /* ─── Platform colors (unified with Sankey palette) ─── */
         const PLAT_COLOR = {
-            TikTok:    '#fe2c55',
+            TikTok:    '#fb7185',
             Twitter:   '#1da1f2',
-            Reddit:    '#ff4500',
-            Instagram: '#e1306c',
-            YouTube:   '#ff0000',
-            Discord:   '#5865f2'
+            Reddit:    '#fb923c',
+            Instagram: '#c13584',
+            YouTube:   '#dc2626',
+            Twitch:    '#c084fc',
+            Discord:   '#3b3fd9'
         };
         const platColor = p => PLAT_COLOR[p] || '#a78bfa';
 
@@ -252,7 +253,7 @@ function renderFresco() {
         });
 
         /* ─── Platform legend (HTML, below SVG) ─── */
-        const platforms = ['TikTok', 'Twitter', 'Reddit', 'Instagram', 'YouTube', 'Discord'];
+        const platforms = ['TikTok', 'Twitter', 'Reddit', 'Instagram', 'YouTube', 'Twitch', 'Discord'];
         const legDiv = document.createElement('div');
         legDiv.className = 'fresco-legend';
         platforms.forEach(p => {

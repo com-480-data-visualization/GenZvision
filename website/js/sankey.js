@@ -27,13 +27,13 @@ function renderSankey() {
 
     // Platform colors
     const platformColors = {
-        'TikTok': '#ee1d52',
+        'TikTok': '#fb7185',
         'Twitter': '#1da1f2',
-        'Reddit': '#ff4500',
-        'YouTube': '#ff0000',
+        'Reddit': '#fb923c',
+        'YouTube': '#dc2626',
         'Instagram': '#c13584',
-        'Twitch': '#9146ff',
-        'Discord': '#5865f2'
+        'Twitch': '#c084fc',
+        'Discord': '#3b3fd9'
     };
 
     d3.json('data/platform_flow.json').then(rawData => {
@@ -149,5 +149,9 @@ function renderSankey() {
             .style('fill', 'var(--text-secondary)')
             .style('font-weight', '600')
             .text('Usage Platform');
+    }).catch(err => {
+        console.error('Sankey error:', err);
+        const c = document.getElementById('spread-viz');
+        if (c) c.innerHTML = '<p style="color:#ff6b6b;padding:1rem">Failed to load platform flow data.</p>';
     });
 }

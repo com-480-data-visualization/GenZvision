@@ -328,6 +328,9 @@ function renderWorldMap() {
             .style('font-family', "'DM Sans', sans-serif")
             .style('fill', 'var(--text-secondary, #a0a0b0)')
             .text('Total usage');
+    }).catch(err => {
+        console.error('Explore world map error:', err);
+        if (mapDiv) mapDiv.innerHTML = '<p style="color:#ff6b6b;padding:1rem">Failed to load world map.</p>';
     });
 }
 
