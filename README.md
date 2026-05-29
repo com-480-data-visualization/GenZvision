@@ -185,6 +185,11 @@ The prototype includes:
 
 **80% of the final grade**
 
+### Website screencast
+![GenZvision Screencast](data/website_hero.gif)
+> *A 2-minute walkthrough of all 9 chapters*
+[![GenZvision Screencast](https://img.shields.io/badge/▶_Watch_Screencast-2_min-black?style=for-the-badge)](data/screencast_final.mp4)
+
 ### Technical Setup
 
 **Live website:** [https://com-480-data-visualization.github.io/GenZvision/website/](https://com-480-data-visualization.github.io/GenZvision/website/)
